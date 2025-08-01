@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>PGH SHOP Store</title>
+  <link href="PGH.jpg" rel="icon" type="image/jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <!-- SEO & Share Tags -->
+  <meta content="PGH SHOP - Jual Part Game Modifikasi Motor dan Mobil" name="description" />
+  <meta content="PGH SHOP Store" property="og:title" />
+  <meta content="rd1.png" property="og:image" />
+  <style>
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slideUp 0.5s ease-out;
+    }
+
+    button {
+      transition: all 0.3s ease;
+    }
+  </style>
+  <script>
+    function showTab(tab) {
+      const tabs = ['toko', 'produk', 'kategori'];
+      tabs.forEach((name) => {
+        const tabButton = document.getElementById(`tab-${name}`);
+        const tabContent = document.getElementById(`content-${name}`);
+        tabButton.classList.remove('text-[#f15a29]', 'font-semibold', 'border-b-2', 'border-[#f15a29]');
+        tabContent.classList.add('hidden');
+        tabContent.classList.remove('animate-slide-up');
+      });
+
+      const activeTabButton = document.getElementById(`tab-${tab}`);
+      const activeTabContent = document.getElementById(`content-${tab}`);
+      activeTabButton.classList.add('text-[#f15a29]', 'font-semibold', 'border-b-2', 'border-[#f15a29]');
+      activeTabContent.classList.remove('hidden');
+      activeTabContent.classList.add('animate-slide-up');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      showTab("toko");
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("dropdown-menu");
+      const button = event.target.closest("button");
+      if (!menu.contains(event.target) && !button?.innerHTML.includes("ellipsis-v")) {
+        menu.classList.add("hidden");
+      }
+    });
+
+    function pilihKategori(kategori) {
+      const hasil = document.getElementById("kategori-hasil");
+      const spinner = document.getElementById("loading-spinner");
+      hasil.innerHTML = "";
+      spinner.classList.remove("hidden");
+
+      setTimeout(() => {
+        spinner.classList.add("hidden");
+        let produkHTML = "";
+
+        if (kategori === "Mod Motor") {
+          produkHTML = `
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                <div class="bg-gray-100 rounded-lg p-2 shadow">
+                  <img src="https://i.postimg.cc/fb6nYWwV/Screenshot-2025-07-11-003754.png" class="rounded mb-2 w-full object-cover"/>
+                  <p class="text-sm font-medium text-black">Shock 125Z</p>
+                  <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-2 shadow">
+                  <img src="https://storage.googleapis.com/a1aa/image/dc0a7599-79ca-44a6-ab1f-832620286b1b.jpg" class="rounded mb-2 w-full object-cover"/>
+                  <p class="text-sm font-medium text-black">Baut CVT Mio</p>
+                  <p class="text-[#f15a29] font-bold text-sm">Rp48.000</p>
+                </div>
+              </div>`;
+        } else if (kategori === "Mod Mobil") {
+          produkHTML = `
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                <div class="bg-gray-100 rounded-lg p-2 shadow">
+                  <img src="https://storage.googleapis.com/a1aa/image/17cacb6b-3cd8-47cc-ecc3-ccf54efeae11.jpg" class="rounded mb-2 w-full object-cover"/>
+                  <p class="text-sm font-medium text-black">Baut Kipas</p>
+                  <p class="text-[#f15a29] font-bold text-sm">Rp12.000</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-2 shadow">
+                  <img src="https://storage.googleapis.com/a1aa/image/5995c1a8-e526-4c17-348b-285324978707.jpg" class="rounded mb-2 w-full object-cover"/>
+                  <p class="text-sm font-medium text-black">Baut Jok Mobil</p>
+                  <p class="text-[#f15a29] font-bold text-sm">Rp12.000</p>
+                </div>
+              </div>`;
+        }
+
+        hasil.innerHTML = produkHTML;
+      }, 500);
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-b from-[#3f4a8a] to-[#a17bc9] font-sans text-black">
+  <div class="container mx-auto px-4 min-h-screen flex flex-col">
+    <!-- Search Bar -->
+    <div class="flex items-center space-x-3 mt-4">
+      <input
+        class="flex-1 rounded-lg bg-[#3f4a8a]/70 placeholder:text-gray-400 text-white py-2 px-3 text-base focus:outline-none"
+        placeholder="Cari di Toko" type="search" />
+      <div class="relative">
+        <button class="text-white text-2xl" onclick="toggleMenu()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-50" id="dropdown-menu">
+          <ul class="text-sm text-gray-700">
+            <li>
+              <button class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                onclick="alert('Fitur Share belum tersedia')">Share</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Store Info -->
+    <div class="flex items-center justify-between mt-4">
+      <div class="flex items-center space-x-3">
+        <a href="javascript:void(0);" onclick="showTab('toko')">
+          <img alt="PGH SHOP" class="w-14 h-14 rounded-full object-cover" src="PGH.jpg" />
+        </a>
+        <div>
+          <div class="text-white text-lg font-normal">PGH SHOP</div>
+          <div class="text-white text-sm font-semibold">3D MODEL PART GAME</div>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-2">
+        <a class="border border-white rounded-md text-white text-sm font-semibold px-4 py-1 flex items-center justify-center space-x-1"
+          href="https://www.facebook.com/profile.php?id=61560929222033&amp;locale=id_ID" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+          <span>Ikuti</span>
+        </a>
+        <button
+          class="border border-white rounded-md text-white text-sm font-semibold px-4 py-1 flex items-center justify-center space-x-1"
+          onclick="alert('Chat button clicked!')">
+          <i class="far fa-comment-alt"></i>
+          <span>Chat</span>
+        </button>
+      </div>
+    </div>
+    <!-- Video Produk -->
+    <a class="flex justify-between items-center bg-white/20 rounded-xl mt-4 px-3 py-2 text-white text-sm font-normal"
+      href="https://www.tiktok.com/@sa_player?_t=ZS-8yODOhdO6wK&amp;_r=1" target="_blank">
+      <div class="flex items-center space-x-2">
+        <div class="w-5 h-5 rounded-full bg-white/80 flex items-center justify-center text-black text-xs font-bold">
+          <i class="fas fa-play"></i>
+        </div>
+        <span>VIDEO TIKTOK</span>
+      </div>
+    </a>
+    <!-- Tabs -->
+    <div class="flex justify-around bg-white rounded-t-xl mt-4 text-base font-normal text-black">
+      <button class="flex-1 py-3" id="tab-toko" onclick="showTab('toko')">HOME</button>
+      <button class="flex-1 py-3" id="tab-produk" onclick="showTab('produk')">Produk</button>
+      <button class="flex-1 py-3" id="tab-kategori" onclick="showTab('kategori')">Kategori</button>
+    </div>
+    <!-- Toko -->
+    <div class="py-4 bg-white text-center rounded-b-xl" id="content-toko">
+      <p class="text-black font-semibold mb-2">Kunjungi Sosial Media Kami:</p>
+      <div class="flex justify-center gap-4">
+        <a href="https://www.facebook.com/profile.php?id=61560929222033&amp;locale=id_ID" target="_blank">
+          <img class="w-10 h-10"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" />
+        </a>
+        <a href="https://www.whatsapp.com/channel/0029Vb125En2f3ENu2kiHQ0S" target="_blank">
+          <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+        </a>
+      </div>
+    </div>
+    <!-- Produk -->
+    <div class="hidden py-4 bg-white rounded-b-xl text-center" id="content-produk">
+      <p class="text-black font-semibold mb-4">REVIEW PART</p>
+      <div class="overflow-x-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- shock 125z -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-1">
+                <img class="w-full object-cover flex-shrink-0" src="shock 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="shok 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(1)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(1)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">SHOCK 125Z ADJUSTABLE</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- arm NBR -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-2">
+                <img class="w-full object-cover flex-shrink-0" src="nbr1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="nbr2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(2)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(2)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">SWING ARM NBR AEROX</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp25.000</p>
+          </div>
+          <!-- kaliper 8.1 -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-3">
+                <img class="w-full object-cover flex-shrink-0" src="kaliper 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="kaliper 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(3)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(3)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">KALIPER 8.1</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp25.000</p>
+          </div>
+          <!-- UNDERBONE RCB -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-4">
+                <img class="w-full object-cover flex-shrink-0" src="ub mx1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="ub mx2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(4)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(4)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">UNDERBONE RCB MX KING</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- RADIATOR VINS -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-5">
+                <img class="w-full object-cover flex-shrink-0" src="rd vins1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="rd vins2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(5)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(5)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">RADIATOR VINS AEROX</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- FAIRING HEREX -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-6">
+                <img class="w-full object-cover flex-shrink-0" src="fairing 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="fairing 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(6)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(6)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">FAIRING HEREX</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp15.000</p>
+          </div>
+          <!-- TUTUP TYGA -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-7">
+                <img class="w-full object-cover flex-shrink-0" src="tutup tyga.png" />
+                <img class="w-full object-cover flex-shrink-0" src="tutup tyga 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(7)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(7)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">TUTUP TANGKI TYGA</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- VELG SIXSTARS -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-8">
+                <img class="w-full object-cover flex-shrink-0" src="vnd sx1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="vnd sx2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(8)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(8)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">VELG VND SIXSTARD R17</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- STABILIZER MATRIS -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-9">
+                <img class="w-full object-cover flex-shrink-0" src="matris.jpg" />
+                <img class="w-full object-cover flex-shrink-0" src="matris 2.jpg" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(9)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(9)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">STABILIZERS MATRIS</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- VOLMETER -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-10">
+                <img class="w-full object-cover flex-shrink-0" src="vl.png" />
+                <img class="w-full object-cover flex-shrink-0" src="vl2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(10)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(10)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">VOLMETER</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp10.000</p>
+          </div>
+          <!-- ARM SIJIRO -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-11">
+                <img class="w-full object-cover flex-shrink-0" src="arm sijiro 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="arm sijiro 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(11)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(11)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">ARM SHIJIRO GL</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- ARM QTT -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-12">
+                <img class="w-full object-cover flex-shrink-0" src="arm qtt 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="arm qtt 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(12)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(12)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">ARM QTT GL</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- VND KZR -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-13">
+                <img class="w-full object-cover flex-shrink-0" src="vn kzr 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="vnd kzr 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(13)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(13)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">VND KZR R 17 METIK</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp20.000</p>
+          </div>
+          <!-- RANGKA REBAH -->
+          <div class="bg-gray-100 rounded-lg p-2 shadow">
+            <div class="relative overflow-hidden rounded mb-2">
+              <div class="flex transition-transform duration-500 ease-in-out" id="carousel-14">
+                <img class="w-full object-cover flex-shrink-0" src="rangka 1.png" />
+                <img class="w-full object-cover flex-shrink-0" src="rangka 2.png" />
+              </div>
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKiri(14)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-black"
+                onclick="geserKanan(14)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <p class="text-sm font-medium text-black">RANGKA REBAH</p>
+            <p class="text-[#f15a29] font-bold text-sm">Rp15.000</p>
+          </div>
+          <!-- Kategori -->
+          <div class="hidden py-4 bg-white rounded-b-xl text-center" id="content-kategori">
+            <p class="text-black font-semibold mb-4">Pilih Kategori:</p>
+            <div class="flex justify-center space-x-4">
+            </div>
+            <div class="hidden text-center mt-6" id="loading-spinner">
+              <i class="fas fa-spinner fa-spin text-[#3f4a8a] text-xl"></i>
+            </div>
+            <div class="mt-6 px-4" id="kategori-hasil"></div>
+          </div>
+        </div>
+        <script>
+          const posisiSlide = {};
+          function geserKanan(id) {
+            const container = document.getElementById(`carousel-${id}`);
+            const total = container.children.length;
+            posisiSlide[id] = (posisiSlide[id] || 0) + 1;
+            if (posisiSlide[id] >= total) posisiSlide[id] = 0;
+            container.style.transform = `translateX(-${posisiSlide[id] * 100}%)`;
+          }
+          function geserKiri(id) {
+            const container = document.getElementById(`carousel-${id}`);
+            const total = container.children.length;
+            posisiSlide[id] = (posisiSlide[id] || 0) - 1;
+            if (posisiSlide[id] < 0) posisiSlide[id] = total - 1;
+            container.style.transform = `translateX(-${posisiSlide[id] * 100}%)`;
+          }
+        </script>
+
+</body>
+
+</html>
