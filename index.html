@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>PGH SHOP Store</title>
+  <link href="PGH.jpg" rel="icon" type="image/jpg" />
+
+  <!-- Tailwind & Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+  <!-- SEO & Share Tags -->
+  <meta content="PGH SHOP - Jual Part Game Modifikasi Motor dan Mobil" name="description" />
+  <meta content="PGH SHOP Store" property="og:title" />
+  <meta content="rd1.png" property="og:image" />
+
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-gradient-to-b from-[#3f4a8a] to-[#a17bc9] font-sans text-black">
+  <div class="container mx-auto px-4 min-h-screen flex flex-col">
+
+    <!-- Search Bar -->
+    <div class="flex items-center space-x-3 mt-4">
+      <input
+        class="flex-1 rounded-lg bg-[#3f4a8a]/70 placeholder:text-gray-400 text-white py-2 px-3 text-base focus:outline-none"
+        placeholder="Cari di Toko" type="search" />
+      <div class="relative">
+        <button class="text-white text-2xl" onclick="toggleMenu()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-50" id="dropdown-menu">
+          <ul class="text-sm text-gray-700">
+            <li>
+              <button class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                onclick="alert('Fitur Share belum tersedia')">Share</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Store Info -->
+    <div class="flex items-center justify-between mt-4">
+      <div class="flex items-center space-x-3">
+        <a href="javascript:void(0);" onclick="showTab('toko')">
+          <img alt="PGH SHOP" class="w-14 h-14 rounded-full object-cover" src="PGH.jpg" />
+        </a>
+        <div>
+          <div class="text-white text-lg font-normal">PGH SHOP</div>
+          <div class="text-white text-sm font-semibold">3D MODEL PART GAME</div>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-2">
+        <a class="border border-white rounded-md text-white text-sm font-semibold px-4 py-1 flex items-center justify-center space-x-1"
+          href="https://www.facebook.com/profile.php?id=61560929222033&amp;locale=id_ID" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+          <span>Ikuti</span>
+        </a>
+        <button
+          class="border border-white rounded-md text-white text-sm font-semibold px-4 py-1 flex items-center justify-center space-x-1"
+          onclick="window.open('https://wa.me/6285773664846','_blank')">
+          <i class="far fa-comment-alt"></i>
+          <span>Chat</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Video Produk -->
+    <a class="flex justify-between items-center bg-white/20 rounded-xl mt-4 px-3 py-2 text-white text-sm font-normal"
+      href="https://www.tiktok.com/@sa_player?_t=ZS-8yODOhdO6wK&amp;_r=1" target="_blank">
+      <div class="flex items-center space-x-2">
+        <div class="w-5 h-5 rounded-full bg-white/80 flex items-center justify-center text-black text-xs font-bold">
+          <i class="fas fa-play"></i>
+        </div>
+        <span>VIDEO TIKTOK</span>
+      </div>
+    </a>
+
+    <!-- Tabs -->
+    <div class="flex justify-around bg-white rounded-t-xl mt-4 text-base font-normal text-black">
+      <button class="flex-1 py-3" id="tab-toko" onclick="showTab('toko')">HOME</button>
+      <button class="flex-1 py-3" id="tab-produk" onclick="showTab('produk')">PRODUK</button>
+      <button class="flex-1 py-3" id="tab-kategori" onclick="showTab('kategori')">KATEGORI</button>
+    </div>
+
+    <!-- Konten tab HOME -->
+    <div class="py-4 bg-white text-center rounded-b-xl" id="content-toko">
+      <p class="text-black font-semibold mb-2">Kunjungi Sosial Media Kami:</p>
+      <div class="flex justify-center gap-4">
+        <a href="https://www.facebook.com/profile.php?id=61560929222033&amp;locale=id_ID" target="_blank">
+          <img class="w-10 h-10"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" />
+        </a>
+        <a href="https://www.whatsapp.com/channel/0029Vb125En2f3ENu2kiHQ0S" target="_blank">
+          <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Konten tab Produk -->
+    <div class="hidden py-4 bg-white rounded-b-xl text-center" id="content-produk">
+      <p class="text-black font-semibold mb-4">REVIEW PART</p>
+      <div id="produk-list" class="grid grid-cols-2 md:grid-cols-3 gap-4 px-4"></div>
+    </div>
+
+    <!-- Konten tab Kategori -->
+    <div class="hidden py-4 bg-white rounded-b-xl text-center" id="content-kategori">
+      <p class="text-black font-semibold mb-4">Pilih Kategori:</p>
+      <div class="flex justify-center space-x-4"></div>
+      <div class="hidden text-center mt-6" id="loading-spinner">
+        <i class="fas fa-spinner fa-spin text-[#3f4a8a] text-xl"></i>
+      </div>
+      <div class="mt-6 px-4" id="kategori-hasil"></div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+        <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-600 hover:text-black">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <h2 class="text-xl font-bold mb-4">Detail Produk</h2>
+
+        <div class="grid grid-cols-12 gap-y-2 gap-x-4 text-sm">
+          <div class="col-span-4 font-semibold text-right">Nama</div>
+          <div class="col-span-8 text-left" id="popupNama"></div>
+
+          <div class="col-span-4 font-semibold text-right">Harga</div>
+          <div class="col-span-8 text-left" id="popupHarga"></div>
+
+          <div class="col-span-4 font-semibold text-right">Deskripsi</div>
+          <div class="col-span-8 text-left whitespace-pre-line break-words" id="popupDeskripsi"></div>
+        </div>
+
+        <button onclick="closePopup()" class="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script eksternal -->
+  <script src="script.js"></script>
+</body>
+
+</html>
