@@ -1134,20 +1134,29 @@
     renderCart();
     // === Tambahan: Checkout ke WhatsApp ===
     checkoutBtn.onclick = () => {
-      if (cart.length === 0) return;
+  if (cart.length === 0) return;
 
-      let listProduk = cart.map(
-        item => `• ${item.name} - ${formatRupiah(item.price)}`
-      ).join('%0A');
+  let listProduk = cart.map(
+    item => `• ${item.name} - ${formatRupiah(item.price)}`
+  ).join('\n');
 
-      let total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
-      let totalFormatted = formatRupiah(total);
+  let total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+  let totalFormatted = formatRupiah(total);
 
-      let nomorWA = "6285773664846"; // Ganti dengan nomor WhatsApp kamu
-      let pesan = `Inpokan no DANA min saya mau beli part:%0A${listProduk}%0A%0ATotal: ${totalFormatted}%0A%0AMohon konfirmasi ketersediaannya 🙏`;
+  let nomorWA = "6285773664846";
 
-      window.open(`https://wa.me/${nomorWA}?text=${pesan}`, "_blank");
-    };
+  let pesan = encodeURIComponent(
+    `Inpokan no DANA min saya mau beli part:
+${listProduk}
+
+Total: ${totalFormatted}
+
+Mohon konfirmasi ketersediaannya 🙏`
+  );
+
+  window.open(`https://wa.me/${nomorWA}?text=${pesan}`, "_blank");
+};
+
 
     // === Akhir Tambahan ===
 
