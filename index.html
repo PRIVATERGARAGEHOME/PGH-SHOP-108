@@ -434,112 +434,111 @@
         transform: translateX(100%);
       }
     }
-  
-/* =========================
+
+    /* =========================
    RESPONSIVE MOBILE STYLING
    ========================= */
-@media (max-width: 992px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 1rem;
-  }
+    @media (max-width: 992px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
 
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
-  .nav-links a {
-    padding: 6px 12px;
-    font-size: 0.95rem;
-  }
+      .nav-links a {
+        padding: 6px 12px;
+        font-size: 0.95rem;
+      }
 
-  .hero {
-    padding: 100px 20px;
-  }
+      .hero {
+        padding: 100px 20px;
+      }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
+      .hero h1 {
+        font-size: 2rem;
+      }
 
-  .hero p {
-    font-size: 1rem;
-  }
+      .hero p {
+        font-size: 1rem;
+      }
 
-  .assets-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
+      .assets-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
 
-  .asset-card {
-    width: 100%;
-  }
+      .asset-card {
+        width: 100%;
+      }
 
-  .cart-sidebar {
-    width: 100%;
-    right: -100%;
-  }
+      .cart-sidebar {
+        width: 100%;
+        right: -100%;
+      }
 
-  .cart-sidebar.active {
-    right: 0;
-  }
-}
+      .cart-sidebar.active {
+        right: 0;
+      }
+    }
 
-@media (max-width: 600px) {
-  .nav-brand h2 {
-    font-size: 1.2rem;
-  }
+    @media (max-width: 600px) {
+      .nav-brand h2 {
+        font-size: 1.2rem;
+      }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-  }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+      }
 
-  .nav-links a {
-    width: 100%;
-    text-align: center;
-  }
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+      }
 
-  .hero {
-    padding: 80px 15px;
-  }
+      .hero {
+        padding: 80px 15px;
+      }
 
-  .hero h1 {
-    font-size: 1.5rem;
-  }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
 
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
 
-  .filter-btn {
-    font-size: 0.85rem;
-    padding: 6px 12px;
-  }
+      .filter-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
 
-  .asset-info {
-    padding: 1rem;
-  }
+      .asset-info {
+        padding: 1rem;
+      }
 
-  .asset-price {
-    font-size: 1.1rem;
-  }
+      .asset-price {
+        font-size: 1.1rem;
+      }
 
-  footer {
-    font-size: 0.85rem;
-    padding: 1.5rem 0;
-  }
+      footer {
+        font-size: 0.85rem;
+        padding: 1.5rem 0;
+      }
 
-  .assets-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-</style>
+      .assets-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -1012,6 +1011,17 @@
         poly: "1K",
         fmt: "Dff, OBJ",
         style: "Stylized"
+      },  
+      {
+        id: 37,
+        name: "SWING ARM DKT THAILAND",
+        desc: "SWING ARM DKT MONOSHOCK FOR EXCITER / MX KING",
+        price: 30000,
+        cat: "arm",
+        images: ["dkt tai1.png", "dkt tai2.png"],
+        poly: "1K",
+        fmt: "Dff, OBJ",
+        style: "Stylized"
       },
     ];
 
@@ -1134,28 +1144,29 @@
     renderCart();
     // === Tambahan: Checkout ke WhatsApp ===
     checkoutBtn.onclick = () => {
-  if (cart.length === 0) return;
+      if (cart.length === 0) return;
 
-  let listProduk = cart.map(
-    item => `• ${item.name} - ${formatRupiah(item.price)}`
-  ).join('\n');
+      let listProduk = cart.map(
+        item => `• ${item.name} - ${formatRupiah(item.price)}`
+      ).join('\n');
 
-  let total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
-  let totalFormatted = formatRupiah(total);
+      let total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      let totalFormatted = formatRupiah(total);
 
-  let nomorWA = "6285773664846";
+      let nomorWA = "6285773664846";
 
-  let pesan = encodeURIComponent(
-    `Inpokan no DANA min saya mau beli part:
-${listProduk}
+      let pesan = encodeURIComponent(
+        `Inpokan no DANA min saya mau beli part:
+       ${listProduk}
 
-Total: ${totalFormatted}
+      Total: ${totalFormatted}
 
-Mohon konfirmasi ketersediaannya 🙏`
-  );
+      Mohon konfirmasi ketersediaannya 🙏`
+      );
 
-  window.open(`https://wa.me/${nomorWA}?text=${pesan}`, "_blank");
-};
+      window.open(`https://wa.me/${nomorWA}?text=${pesan}`, "_blank");
+    };
+
 
 
     // === Akhir Tambahan ===
