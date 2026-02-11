@@ -30,7 +30,10 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 6000;
+      /* TAMBAH / UBAH INI */
+
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -54,7 +57,8 @@
       text-decoration: none;
       padding: 8px 16px;
       border-radius: 6px;
-      transition: 0.3s;
+      transition: left 0.35s ease;
+
     }
 
     /* saat hover */
@@ -218,7 +222,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -537,6 +541,175 @@
       .assets-grid {
         grid-template-columns: 1fr;
       }
+
+      /* ===== GRID PRODUK 2 KOLOM KHUSUS HP ===== */
+      @media (max-width:768px) {
+
+        .assets-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .asset-info {
+          padding: 10px;
+        }
+
+        .asset-info h3 {
+          font-size: 14px;
+        }
+
+        .asset-price {
+          font-size: 13px;
+        }
+
+      }
+
+      /* ===== FIX META TEXT MOBILE ===== */
+      @media (max-width:768px) {
+
+        .asset-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2px;
+          font-size: 11px;
+        }
+
+      }
+
+    }
+
+    /* === TAMBAHAN SHARE PRODUK (AMAN) === */
+    .share-btn {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 5px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .share-btn:hover {
+      background: #2980b9;
+    }
+
+    .highlight-product {
+      box-shadow: 0 0 20px #3498db !important;
+    }
+
+    /* ===== HAMBURGER MENU PGH MOBILE PRO ===== */
+    .hamburger {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      position: relative;
+      /* TAMBAH */
+      z-index: 5000;
+      /* TAMBAH */
+    }
+
+
+    @media(max-width:768px) {
+
+      .nav-links {
+        display: none;
+      }
+
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        display: none;
+        z-index: 999;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 80%;
+        text-align: center;
+      }
+
+    }
+
+    /* ===== SIDEBAR MOBILE PGH ===== */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 25%;
+      min-width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      display: flex;
+      flex-direction: column;
+      padding-top: 160px;
+      gap: 15px;
+      transition: 0.3s;
+      z-index: 4000;
+      /* UBAH */
+    }
+
+    .sidebar-overlay {
+      backdrop-filter: blur(4px);
+    }
+
+
+
+    .mobile-sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      background: #34495e;
+      margin: 0 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .mobile-sidebar.show {
+      left: 0;
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 3500;
+      /* TAMBAH */
+    }
+
+
+    .sidebar-overlay.show {
+      display: block;
+    }
+
+    /* hanya mobile */
+    @media(min-width:769px) {
+
+      .mobile-sidebar,
+      .sidebar-overlay {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -544,20 +717,41 @@
 <body>
   <!-- Header -->
   <nav class="navbar">
+
     <div class="nav-brand">
       <h2>PGH 3D Assets Game</h2>
     </div>
-    <div class="nav-links">
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars" id="menuIcon"></i>
+    </div>
+
+
+    <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#assets">Assets</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="nav-cart"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></div>
+
+    <div class="nav-cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
+
   </nav>
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#assets" onclick="toggleMenu()">Assets</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMenu()"></div>
+
+
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <h1>Premium 3D Game Assets</h1>
+    <h1>3D Assets Game</h1>
     <p>Buy & Download Instantly - No Login Required</p>
     <a href="#assets" class="cta-button">Browse Assets</a>
   </section>
@@ -595,17 +789,35 @@
   <!-- Contact Section -->
   <section id="contact" style="padding: 100px 0; text-align: center; background: #ecf0f1;">
     <div class="container">
-      <h2 style="color: #2c3e50; margin-bottom: 1rem;">Hubungi Kami</h2>
-      <p style="color: #555; margin-bottom: 2rem;">Ingin tanya soal aset 3D kami atau mau Request 3D? Hubungi kami
+      <h2 style="color: #2c3e50; margin-bottom: 1rem;">CONTACT PERSON</h2>
+      <p style="color: #555; margin-bottom: 2rem;">Ingin tanya soal asset 3D atau mau Request 3D? Langsung saja hubungi
         melalui:</p>
 
       <p style="font-size: 1.1rem; line-height: 1.8;">
-        📧 Email:
-        <a href="mailto:miftahulf694@gmail.com"
-          style="color: #3498db; text-decoration: none;">miftahulf694@gmail.com</a><br>
-        📱 WhatsApp:
-        <a href="https://wa.me/6285773664846" target="_blank" style="color: #27ae60; text-decoration: none;">+62
-          857-7366-4846</a>
+      <div style="margin-top:25px;">
+
+        <a href="https://wa.me/6285773664846" target="_blank" style="
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#25D366;
+    color:white;
+    padding:18px 28px;
+    font-size:20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+  " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+
+          <i class="fab fa-whatsapp" style="font-size:30px;"></i>
+          Chat WhatsApp
+
+        </a>
+
+      </div>
+
       </p>
     </div>
   </section>
@@ -1011,7 +1223,7 @@
         poly: "1K",
         fmt: "Dff, OBJ",
         style: "Stylized"
-      },  
+      },
       {
         id: 37,
         name: "SWING ARM DKT THAILAND",
@@ -1060,34 +1272,63 @@
       }
     });
 
-    document.querySelector(".nav-cart").onclick = () => cartSidebar.classList.add("active");
+    document.querySelector(".nav-cart").onclick = () => {
+      cartSidebar.classList.toggle("active");
+    };
+
     document.querySelector(".close-cart").onclick = () => cartSidebar.classList.remove("active");
 
     function renderAssets() {
       const data = filter === "all" ? assets : assets.filter(a => a.cat === filter);
       grid.innerHTML = data.map(a => `
-        <div class="asset-card">
+        <div class="asset-card" id="product-${a.id}">
           <div class="asset-image">
             <div class="image-slider" id="slider-${a.id}">
               ${a.images.map(img => `<div class="image-slide"><img src="${img}" alt="${a.name}"></div>`).join('')}
             </div>
-            <button class="slider-arrow prev" onclick="slideImage(${a.id}, -1)"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-arrow next" onclick="slideImage(${a.id}, 1)"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-arrow prev" onclick="slideImage(${a.id}, -1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow next" onclick="slideImage(${a.id}, 1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
             <div class="slider-nav">
-              ${a.images.map((_, index) => `<div class="slider-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${a.id}, ${index})"></div>`).join('')}
+              ${a.images.map((_, index) =>
+        `<div class="slider-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${a.id}, ${index})"></div>`
+      ).join('')}
             </div>
           </div>
+
           <div class="asset-info">
             <h3>${a.name}</h3>
             <p class="asset-description">${a.desc}</p>
-            <div class="asset-meta"><span>Polygons: ${a.poly}</span><span>Style: ${a.style}</span></div>
-            <div class="asset-meta"><span>Format: ${a.fmt}</span></div>
+
+            <div class="asset-meta">
+              <span>Polygons: ${a.poly}</span>
+              <span>Style: ${a.style}</span>
+            </div>
+
+            <div class="asset-meta">
+              <span>Format: ${a.fmt}</span>
+            </div>
+
             <div class="asset-price">${formatRupiah(a.price)}</div>
-            <button class="add-to-cart" ${isInCart(a.id) ? "disabled" : ""} onclick="addToCart(${a.id})">${isInCart(a.id) ? "Added" : "Add to Cart"}</button>
+
+            <button class="add-to-cart"
+              ${isInCart(a.id) ? "disabled" : ""}
+              onclick="addToCart(${a.id})">
+              ${isInCart(a.id) ? "Added" : "Add to Cart"}
+            </button>
+
+            <button class="share-btn" onclick="shareProduct(${a.id})">
+              <i class="fas fa-share"></i> Bagikan
+            </button>
+
           </div>
         </div>
       `).join('');
     }
+
 
     function isInCart(id) { return cart.some(item => item.id === id); }
 
@@ -1184,6 +1425,65 @@
 
     renderAssets();
     renderCart();
+
+    /* === FITUR SHARE PRODUK PGH === */
+    function shareProduct(id) {
+      const url = window.location.origin + window.location.pathname + "?product=" + id;
+
+      if (navigator.share) {
+        navigator.share({
+          title: "PGH 3D Asset",
+          text: "Cek produk ini 🔥",
+          url: url
+        });
+      } else {
+        navigator.clipboard.writeText(url);
+        alert("Link produk berhasil disalin 👍");
+      }
+    }
+
+    /* === AUTO SCROLL PRODUK SHARE === */
+    window.addEventListener("load", () => {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get("product");
+
+      if (productId) {
+        setTimeout(() => {
+          const el = document.getElementById("product-" + productId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+            el.classList.add("highlight-product");
+          }
+        }, 500);
+      }
+    });
+
+    function toggleMenu() {
+
+      const sidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      const icon = document.getElementById("menuIcon");
+
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+
+      if (sidebar.classList.contains("show")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      }
+
+    }
+    document.querySelectorAll(".mobile-sidebar a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menuIcon").classList.remove("fa-xmark");
+        document.getElementById("menuIcon").classList.add("fa-bars");
+      });
+    });
+
+
 
   </script>
 </body>
