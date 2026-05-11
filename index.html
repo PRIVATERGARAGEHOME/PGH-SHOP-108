@@ -2,1788 +2,1282 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>3D Asset Store PGH - Premium & Free Game Assets</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ========== DARK MODE VARIABLES ========== */
-    :root {
-      --bg-primary: #f8f9fa;
-      --bg-secondary: #ffffff;
-      --bg-card: #ffffff;
-      --text-primary: #1e2a3e;
-      --text-secondary: #4a5568;
-      --text-muted: #666;
-      --border-color: #e2e8f0;
-      --header-bg: #0a1a2f;
-      --header-text: white;
-      --hero-start: #0f2027;
-      --hero-end: #2c5364;
-      --filter-bg: #e2e8f0;
-      --filter-text: #1e2a3e;
-      --filter-active: #3498db;
-      --footer-bg: #0b1c2c;
-      --contact-bg: #ecf8ff;
-      --shadow: rgba(0, 0, 0, 0.08);
-      --shadow-hover: rgba(0, 0, 0, 0.12);
-      --cart-sidebar-bg: #ffffff;
-    }
-
-    body.dark {
-      --bg-primary: #121212;
-      --bg-secondary: #1e1e2e;
-      --bg-card: #2a2a3a;
-      --text-primary: #e2e8f0;
-      --text-secondary: #a0aec0;
-      --text-muted: #94a3b8;
-      --border-color: #334155;
-      --header-bg: #0f0f1a;
-      --header-text: #e2e8f0;
-      --hero-start: #0a0a15;
-      --hero-end: #1a1a2e;
-      --filter-bg: #334155;
-      --filter-text: #e2e8f0;
-      --filter-active: #3498db;
-      --footer-bg: #0a0a14;
-      --contact-bg: #1a1a2e;
-      --shadow: rgba(0, 0, 0, 0.3);
-      --shadow-hover: rgba(0, 0, 0, 0.4);
-      --cart-sidebar-bg: #2a2a3a;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.5;
-      transition: background 0.3s ease, color 0.2s ease;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 6000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 2rem;
-      background: var(--header-bg);
-      color: var(--header-text);
-      flex-wrap: wrap;
-      box-shadow: 0 4px 12px var(--shadow);
-      transition: background 0.3s ease;
-    }
-
-    .nav-brand h2 {
-      background: linear-gradient(135deg, #3498db, #8e44ad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
-      background: #1e2f41;
-      color: white;
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 40px;
-      transition: all 0.25s ease;
-      font-weight: 500;
-    }
-
-    body.dark .nav-links a {
-      background: #2d3748;
-    }
-
-    .nav-links a:hover {
-      background: #2c5282;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-links a:active {
-      transform: scale(0.96);
-    }
-
-    /* Dark mode toggle */
-    .dark-mode-toggle {
-      background: #1e2f41;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: 8px 14px;
-      border-radius: 40px;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    body.dark .dark-mode-toggle {
-      background: #2d3748;
-    }
-
-    .dark-mode-toggle:hover {
-      background: #2c5282;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .dark-mode-toggle:active {
-      transform: scale(0.96);
-    }
-
-    /* Cart icon */
-    .nav-cart {
-      position: relative;
-      cursor: pointer;
-      background: #1e2f41;
-      padding: 8px 15px;
-      border-radius: 40px;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-cart:hover {
-      background: #2c5282;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .nav-cart:active {
-      transform: scale(0.96);
-    }
-
-    #cart-count {
-      background: #e74c3c;
-      color: white;
-      border-radius: 30px;
-      padding: 2px 8px;
-      font-size: 0.7rem;
-      font-weight: bold;
-      margin-left: 4px;
-    }
-
-    /* hero */
-    .hero {
-      background: linear-gradient(125deg, var(--hero-start), #203a43, var(--hero-end));
-      color: white;
-      text-align: center;
-      padding: 130px 0 90px;
-      margin-top: 70px;
-      transition: background 0.3s ease;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .badge-free-premium {
-      display: inline-block;
-      background: #f1c40f;
-      color: #1e2a3e;
-      border-radius: 40px;
-      padding: 5px 15px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      margin-top: 15px;
-      transition: transform 0.2s;
-    }
-
-    .badge-free-premium:hover {
-      transform: scale(1.03);
-    }
-
-    /* filter */
-    .filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
-    }
-
-    .filter-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.7rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .filter-btn {
-      padding: 8px 20px;
-      border-radius: 40px;
-      border: none;
-      background: var(--filter-bg);
-      color: var(--filter-text);
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    .filter-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px var(--shadow);
-    }
-
-    .filter-btn:active {
-      transform: scale(0.94);
-    }
-
-    .filter-btn.active {
-      background: var(--filter-active);
-      color: white;
-      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
-      transform: scale(1.02);
-    }
-
-    .filter-price-btn {
-      background: #2d3748;
-      color: white;
-    }
-
-    body.dark .filter-price-btn {
-      background: #1a202c;
-    }
-
-    .filter-price-btn.active {
-      background: #e67e22 !important;
-      color: white;
-      box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
-      transform: scale(1.02);
-    }
-
-    /* grid */
-    .assets-grid {
-      display: grid;
-      gap: 1.8rem;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    }
-
-    .asset-card {
-      background: var(--bg-card);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 24px var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .asset-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px var(--shadow-hover);
-    }
-
-    .price-tag {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(4px);
-      padding: 4px 12px;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 0.8rem;
-      color: white;
-      z-index: 12;
-      transition: transform 0.2s;
-    }
-
-    .price-tag.premium {
-      background: #e67e22;
-    }
-
-    .price-tag.free {
-      background: #2ecc71;
-    }
-
-    .asset-image {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      background: #f1f5f9;
-    }
-
-    body.dark .asset-image {
-      background: #1a1a2e;
-    }
-
-    .image-slider {
-      display: flex;
-      height: 100%;
-      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    .image-slide {
-      width: 100%;
-      flex-shrink: 0;
-    }
-
-    .image-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: #f8fafc;
-      transition: transform 0.3s ease;
-    }
-
-    .image-slide img:hover {
-      transform: scale(1.02);
-    }
-
-    body.dark .image-slide img {
-      background: #1e1e2e;
-    }
-
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 40px;
-      cursor: pointer;
-      opacity: 0;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .asset-image:hover .slider-arrow {
-      opacity: 1;
-    }
-
-    .slider-arrow:hover {
-      background: rgba(0, 0, 0, 0.8);
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .slider-arrow:active {
-      transform: translateY(-50%) scale(0.92);
-    }
-
-    .slider-arrow.prev {
-      left: 8px;
-    }
-
-    .slider-arrow.next {
-      right: 8px;
-    }
-
-    .slider-nav {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .slider-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.6);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .slider-dot:hover {
-      background: white;
-      transform: scale(1.3);
-    }
-
-    .slider-dot.active {
-      background: #3498db;
-      transform: scale(1.2);
-    }
-
-    .asset-info {
-      padding: 1.2rem;
-    }
-
-    .asset-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-      color: var(--text-primary);
-    }
-
-    .asset-description {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-    }
-
-    .asset-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      background: var(--bg-primary);
-      padding: 6px 8px;
-      border-radius: 20px;
-      margin: 8px 0;
-    }
-
-    .asset-price {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-primary);
-    }
-
-    .free-badge-small {
-      background: #2ecc71;
-      padding: 3px 12px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      color: white;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    /* Tombol interaktif */
-    .add-to-cart,
-    .share-btn,
-    .download-btn,
-    .checkout-btn,
-    .remove-item,
-    .close-cart {
-      flex: 1;
-      padding: 10px;
-      border-radius: 40px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    .add-to-cart {
-      background: #27ae60;
-      color: white;
-    }
-
-    .add-to-cart:hover:not(:disabled) {
-      background: #1e8e4a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .add-to-cart:active:not(:disabled) {
-      transform: scale(0.96);
-    }
-
-    .add-to-cart:disabled {
-      background: #95a5a6;
-      cursor: not-allowed;
-      opacity: 0.7;
-    }
-
-    .share-btn {
-      background: #3498db;
-      color: white;
-    }
-
-    .share-btn:hover {
-      background: #2c3e50;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .share-btn:active {
-      transform: scale(0.96);
-    }
-
-    .download-btn {
-      background: #f39c12;
-      color: white;
-    }
-
-    .download-btn:hover {
-      background: #e67e22;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .download-btn:active {
-      transform: scale(0.96);
-    }
-
-    .remove-item {
-      background: #e74c3c;
-      color: white;
-      padding: 4px 10px;
-      /* atas-bawah 4px, kiri-kanan 10px */
-      border-radius: 30px;
-      font-size: 0.7rem;
-      /* sekitar 11-12px */
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      flex: none;
-      /* mencegah memanjang dalam flexbox */
-      width: auto;
-      /* lebar otomatis sesuai teks */
-      min-width: fit-content;
-      white-space: nowrap;
-      /* teks tidak turun baris */
-    }
-
-    .remove-item:hover {
-      background: #c0392b;
-      transform: translateY(-1px);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .remove-item:active {
-      transform: scale(0.94);
-    }
-
-    .close-cart {
-      background: none;
-      font-size: 1.8rem;
-      padding: 0;
-      flex: none;
-      width: 40px;
-      color: var(--text-primary);
-    }
-
-    .close-cart:hover {
-      background: rgba(0, 0, 0, 0.1);
-      transform: scale(1.1);
-    }
-
-    .checkout-btn {
-      background: #0f172a;
-      color: white;
-      width: 100%;
-    }
-
-    .checkout-btn:hover:not(:disabled) {
-      background: #1e293b;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .checkout-btn:active:not(:disabled) {
-      transform: scale(0.97);
-    }
-
-    .checkout-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    /* Cart Sidebar */
-    .cart-sidebar {
-      position: fixed;
-      left: 0;
-      bottom: -100%;
-      width: 100%;
-      height: 55vh;
-      background: var(--cart-sidebar-bg);
-      border-top-left-radius: 28px;
-      border-top-right-radius: 28px;
-      transition: bottom 0.35s ease;
-      z-index: 10001;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 -10px 35px var(--shadow);
-    }
-
-    .cart-sidebar.active {
-      bottom: 0;
-    }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1rem;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding: 12px 0;
-      transition: background 0.2s;
-    }
-
-    .cart-item:hover {
-      background: var(--bg-primary);
-    }
-
-    .cart-item-info {
-      flex: 1;
-    }
-
-    .cart-item-name {
-      font-weight: bold;
-    }
-
-    .cart-item-price {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    .cart-total {
-      padding: 1rem;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-    }
-
-    .cart-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 10000;
-      display: none;
-      transition: opacity 0.3s;
-    }
-
-    .cart-overlay.active {
-      display: block;
-    }
-
-    footer {
-      background: var(--footer-bg);
-      color: #cbd5e1;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 60px;
-      transition: background 0.3s ease;
-    }
-
-    .contact-wa-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #25D366;
-      padding: 14px 28px;
-      border-radius: 60px;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .contact-wa-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      background: #20b85f;
-    }
-
-    .contact-wa-btn:active {
-      transform: scale(0.96);
-    }
-
-    #contact {
-      background: var(--contact-bg);
-      transition: background 0.3s ease;
-    }
-
-    #contact h2 {
-      color: var(--text-primary);
-    }
-
-    #contact p {
-      color: var(--text-secondary);
-    }
-
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2c3e50;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
-      z-index: 99999;
-      animation: fadeUp 2.6s forwards;
-    }
-
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        bottom: 0;
-      }
-
-      15% {
-        opacity: 1;
-        bottom: 25px;
-      }
-
-      85% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-        bottom: 60px;
-        visibility: hidden;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0.7rem 1rem;
-        gap: 10px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: white;
-        transition: transform 0.2s;
-      }
-
-      .hamburger:hover {
-        transform: scale(1.1);
-      }
-
-      .hamburger:active {
-        transform: scale(0.9);
-      }
-
-      .nav-links.show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: var(--header-bg);
-        padding: 20px;
-        gap: 12px;
-      }
-
-      .assets-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      }
-
-      .button-group {
-        flex-direction: row;
-        gap: 8px;
-      }
-
-      .dark-mode-toggle span {
-        display: none;
-      }
-    }
-
-    .hamburger {
-      display: none;
-    }
-
-    .mobile-sidebar {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-sidebar {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100%;
-        background: var(--header-bg);
-        z-index: 9999;
-        padding: 80px 20px;
-        gap: 20px;
-        transition: left 0.3s ease;
-      }
-
-      .mobile-sidebar a {
-        color: white;
-        font-size: 1.3rem;
-        text-decoration: none;
-        padding: 10px;
-        transition: transform 0.2s;
-      }
-
-      .mobile-sidebar a:hover {
-        transform: translateX(10px);
-      }
-
-      .mobile-sidebar.show {
-        left: 0;
-      }
-
-      .sidebar-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 9998;
-        display: none;
-      }
-
-      .sidebar-overlay.show {
-        display: block;
-      }
-
-      .hamburger {
-        display: block;
-        z-index: 10002;
-      }
-    }
-
-    .highlight-product {
-      animation: glow 1.2s ease-in-out;
-      box-shadow: 0 0 0 3px #3498db;
-    }
-
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 0 0 #3498db;
-      }
-
-      50% {
-        box-shadow: 0 0 0 8px rgba(52, 152, 219, 0.4);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 transparent;
-      }
-    }
-
-    /* Efek tambahan untuk tombol slider dan dot */
-    .slider-arrow,
-    .slider-dot,
-    .filter-btn,
-    .add-to-cart,
-    .share-btn,
-    .download-btn,
-    .checkout-btn,
-    .close-cart,
-    .remove-item,
-    .dark-mode-toggle,
-    .nav-cart,
-    .nav-links a,
-    .contact-wa-btn,
-    .hamburger {
-      user-select: none;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>3D Asset Store PGH - Premium & Free Game Assets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1e2a3e;
+            --text-secondary: #4a5568;
+            --text-muted: #666;
+            --border-color: #e2e8f0;
+            --header-bg: #0a1a2f;
+            --header-text: white;
+            --hero-start: #0f2027;
+            --hero-end: #2c5364;
+            --filter-bg: #e2e8f0;
+            --filter-text: #1e2a3e;
+            --filter-active: #3498db;
+            --footer-bg: #0b1c2c;
+            --contact-bg: #ecf8ff;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-hover: rgba(0, 0, 0, 0.12);
+            --cart-sidebar-bg: #ffffff;
+        }
+
+        body.dark {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e2e;
+            --bg-card: #2a2a3a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --header-bg: #0f0f1a;
+            --header-text: #e2e8f0;
+            --hero-start: #0a0a15;
+            --hero-end: #1a1a2e;
+            --filter-bg: #334155;
+            --filter-text: #e2e8f0;
+            --filter-active: #3498db;
+            --footer-bg: #0a0a14;
+            --contact-bg: #1a1a2e;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-hover: rgba(0, 0, 0, 0.4);
+            --cart-sidebar-bg: #2a2a3a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: background 0.3s ease, color 0.2s ease;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 6000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background: var(--header-bg);
+            color: var(--header-text);
+            flex-wrap: wrap;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: background 0.3s ease;
+        }
+
+        .nav-brand h2 {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        /* ========== TOMBOL NAVIGASI HOME, ASSETS, CONTACT (DIPERBAGUS) ========== */
+        .nav-links a {
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Tombol Home - gradient biru */
+        .nav-item-home {
+            background: linear-gradient(135deg, #1a6fb5, #3498db, #1a6fb5);
+            background-size: 200% 200%;
+        }
+        .nav-item-home:hover {
+            background: linear-gradient(135deg, #1e80cc, #5dade2, #1e80cc);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(52, 152, 219, 0.45), 0 0 0 3px rgba(52, 152, 219, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Tombol Assets - gradient emas/oranye */
+        .nav-item-assets {
+            background: linear-gradient(135deg, #c0720e, #f39c12, #c0720e);
+            background-size: 200% 200%;
+        }
+        .nav-item-assets:hover {
+            background: linear-gradient(135deg, #d68910, #f5b041, #d68910);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(243, 156, 18, 0.45), 0 0 0 3px rgba(243, 156, 18, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Tombol Contact - gradient hijau */
+        .nav-item-contact {
+            background: linear-gradient(135deg, #1a8a4a, #27ae60, #1a8a4a);
+            background-size: 200% 200%;
+        }
+        .nav-item-contact:hover {
+            background: linear-gradient(135deg, #1fa35a, #2ecc71, #1fa35a);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(39, 174, 96, 0.45), 0 0 0 3px rgba(39, 174, 96, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nav-links a:active {
+            transform: scale(0.94);
+            transition: all 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark mode override untuk nav-links */
+        body.dark .nav-item-home {
+            background: linear-gradient(135deg, #1a5276, #2471a3, #1a5276);
+            background-size: 200% 200%;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        body.dark .nav-item-home:hover {
+            background: linear-gradient(135deg, #1f6dad, #3498db, #1f6dad);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(52, 152, 219, 0.5), 0 0 0 3px rgba(52, 152, 219, 0.25);
+        }
+        body.dark .nav-item-assets {
+            background: linear-gradient(135deg, #7d4e0b, #b8760f, #7d4e0b);
+            background-size: 200% 200%;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        body.dark .nav-item-assets:hover {
+            background: linear-gradient(135deg, #9a5f0d, #e09e1a, #9a5f0d);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(243, 156, 18, 0.5), 0 0 0 3px rgba(243, 156, 18, 0.25);
+        }
+        body.dark .nav-item-contact {
+            background: linear-gradient(135deg, #145a30, #1a7a40, #145a30);
+            background-size: 200% 200%;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        body.dark .nav-item-contact:hover {
+            background: linear-gradient(135deg, #186f3a, #25b85a, #186f3a);
+            background-size: 200% 200%;
+            animation: gradientShift 2.5s ease infinite;
+            box-shadow: 0 6px 22px rgba(39, 174, 96, 0.5), 0 0 0 3px rgba(39, 174, 96, 0.25);
+        }
+        /* ========== AKHIR TOMBOL NAVIGASI ========== */
+
+        .dark-mode-toggle {
+            background: #1e2f41;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 8px 14px;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        body.dark .dark-mode-toggle {
+            background: #2d3748;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #2c5282;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.96);
+        }
+
+        .nav-cart {
+            position: relative;
+            cursor: pointer;
+            background: #1e2f41;
+            padding: 8px 15px;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-cart:hover {
+            background: #2c5282;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-cart:active {
+            transform: scale(0.96);
+        }
+
+        #cart-count {
+            background: #e74c3c;
+            color: white;
+            border-radius: 30px;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+
+        .hero {
+            background: linear-gradient(125deg, var(--hero-start), #203a43, var(--hero-end));
+            color: white;
+            text-align: center;
+            padding: 130px 0 90px;
+            margin-top: 70px;
+            transition: background 0.3s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-free-premium {
+            display: inline-block;
+            background: #f1c40f;
+            color: #1e2a3e;
+            border-radius: 40px;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+
+        .badge-free-premium:hover {
+            transform: scale(1.03);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: none;
+            background: var(--filter-bg);
+            color: var(--filter-text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow);
+        }
+
+        .filter-btn:active {
+            transform: scale(0.94);
+        }
+
+        .filter-btn.active {
+            background: var(--filter-active);
+            color: white;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .filter-price-btn {
+            background: #2d3748;
+            color: white;
+        }
+
+        body.dark .filter-price-btn {
+            background: #1a202c;
+        }
+
+        .filter-price-btn.active {
+            background: #e67e22 !important;
+            color: white;
+            box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .assets-grid {
+            display: grid;
+            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        .asset-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px var(--shadow-hover);
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: white;
+            z-index: 12;
+            transition: transform 0.2s;
+        }
+
+        .price-tag.premium {
+            background: #e67e22;
+        }
+
+        .price-tag.free {
+            background: #2ecc71;
+        }
+
+        .asset-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        body.dark .asset-image {
+            background: #1a1a2e;
+        }
+
+        .image-slider {
+            display: flex;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .image-slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .image-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f8fafc;
+            transition: transform 0.3s ease;
+        }
+
+        .image-slide img:hover {
+            transform: scale(1.02);
+        }
+
+        body.dark .image-slide img {
+            background: #1e1e2e;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 40px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .asset-image:hover .slider-arrow {
+            opacity: 1;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .slider-arrow:active {
+            transform: translateY(-50%) scale(0.92);
+        }
+
+        .slider-arrow.prev {
+            left: 8px;
+        }
+
+        .slider-arrow.next {
+            right: 8px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .slider-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slider-dot:hover {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        .slider-dot.active {
+            background: #3498db;
+            transform: scale(1.2);
+        }
+
+        .asset-info {
+            padding: 1.2rem;
+        }
+
+        .asset-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .asset-description {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .asset-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: var(--bg-primary);
+            padding: 6px 8px;
+            border-radius: 20px;
+            margin: 8px 0;
+        }
+
+        .asset-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+        }
+
+        .free-badge-small {
+            background: #2ecc71;
+            padding: 3px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: white;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .add-to-cart,
+        .share-btn,
+        .download-btn,
+        .checkout-btn,
+        .remove-item,
+        .close-cart {
+            flex: 1;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .add-to-cart {
+            background: #27ae60;
+            color: white;
+        }
+
+        .add-to-cart:hover:not(:disabled) {
+            background: #1e8e4a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .add-to-cart:active:not(:disabled) {
+            transform: scale(0.96);
+        }
+
+        .add-to-cart:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .share-btn {
+            background: #3498db;
+            color: white;
+        }
+
+        .share-btn:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-btn:active {
+            transform: scale(0.96);
+        }
+
+        .download-btn {
+            background: #f39c12;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-btn:active {
+            transform: scale(0.96);
+        }
+
+        .remove-item {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex: none;
+            width: auto;
+            min-width: fit-content;
+            white-space: nowrap;
+        }
+
+        .remove-item:hover {
+            background: #c0392b;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove-item:active {
+            transform: scale(0.94);
+        }
+
+        .close-cart {
+            background: none;
+            font-size: 1.8rem;
+            padding: 0;
+            flex: none;
+            width: 40px;
+            color: var(--text-primary);
+        }
+
+        .close-cart:hover {
+            background: rgba(0, 0, 0, 0.1);
+            transform: scale(1.1);
+        }
+
+        .checkout-btn {
+            background: #0f172a;
+            color: white;
+            width: 100%;
+        }
+
+        .checkout-btn:hover:not(:disabled) {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .checkout-btn:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+
+        .checkout-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            height: 55vh;
+            background: var(--cart-sidebar-bg);
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            transition: bottom 0.35s ease;
+            z-index: 10001;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 -10px 35px var(--shadow);
+        }
+
+        .cart-sidebar.active {
+            bottom: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            transition: background 0.2s;
+        }
+
+        .cart-item:hover {
+            background: var(--bg-primary);
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-total {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            display: none;
+            transition: opacity 0.3s;
+        }
+
+        .cart-overlay.active {
+            display: block;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 60px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-wa-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: #20b85f;
+        }
+
+        .contact-wa-btn:active {
+            transform: scale(0.96);
+        }
+
+        #contact {
+            background: var(--contact-bg);
+            transition: background 0.3s ease;
+        }
+
+        #contact h2 {
+            color: var(--text-primary);
+        }
+
+        #contact p {
+            color: var(--text-secondary);
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            z-index: 99999;
+            animation: fadeUp 2.6s forwards;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                bottom: 0;
+            }
+
+            15% {
+                opacity: 1;
+                bottom: 25px;
+            }
+
+            85% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                bottom: 60px;
+                visibility: hidden;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 0.7rem 1rem;
+                gap: 10px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+                transition: transform 0.2s;
+            }
+
+            .hamburger:hover {
+                transform: scale(1.1);
+            }
+
+            .hamburger:active {
+                transform: scale(0.9);
+            }
+
+            .nav-links.show {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: var(--header-bg);
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .assets-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+
+            .button-group {
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .dark-mode-toggle span {
+                display: none;
+            }
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .mobile-sidebar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sidebar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100%;
+                background: var(--header-bg);
+                z-index: 9999;
+                padding: 80px 20px;
+                gap: 18px;
+                transition: left 0.3s ease;
+            }
+
+            /* Mobile sidebar link styling */
+            .mobile-sidebar a {
+                color: white;
+                font-size: 1.2rem;
+                text-decoration: none;
+                padding: 12px 18px;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+            }
+
+            .mobile-sidebar a:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .mobile-sidebar a:active {
+                transform: scale(0.96);
+            }
+
+            /* Warna ikon mobile sidebar */
+            .mobile-sidebar a i.fa-home {
+                color: #5dade2;
+            }
+            .mobile-sidebar a i.fa-cubes {
+                color: #f5b041;
+            }
+            .mobile-sidebar a i.fa-comments {
+                color: #2ecc71;
+            }
+
+            .mobile-sidebar.show {
+                left: 0;
+            }
+
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 9998;
+                display: none;
+            }
+
+            .sidebar-overlay.show {
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 10002;
+            }
+        }
+
+        .highlight-product {
+            animation: glow 1.2s ease-in-out;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 0 0 #3498db;
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(52, 152, 219, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
+        .slider-arrow,
+        .slider-dot,
+        .filter-btn,
+        .add-to-cart,
+        .share-btn,
+        .download-btn,
+        .checkout-btn,
+        .close-cart,
+        .remove-item,
+        .dark-mode-toggle,
+        .nav-cart,
+        .nav-links a,
+        .contact-wa-btn,
+        .hamburger {
+            user-select: none;
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-brand">
-      <h2>🏍️ PGH 3D Assets</h2>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>🏍️ PGH 3D Assets</h2>
+        </div>
+        <div class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars" id="menuIcon"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="nav-item-home"><i class="fas fa-home"></i> Home</a>
+            <a href="#assets" class="nav-item-assets"><i class="fas fa-cubes"></i> Assets</a>
+            <a href="#contact" class="nav-item-contact"><i class="fas fa-comments"></i> Contact</a>
+        </div>
+        <div class="nav-cart" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i> <span>Dark Mode</span>
+        </button>
+    </nav>
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <a href="#home" onclick="closeMobileMenu()"><i class="fas fa-home"></i> Home</a>
+        <a href="#assets" onclick="closeMobileMenu()"><i class="fas fa-cubes"></i> Assets</a>
+        <a href="#contact" onclick="closeMobileMenu()"><i class="fas fa-comments"></i> Contact</a>
     </div>
-    <div class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars" id="menuIcon"></i></div>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#assets">Assets</a>
-      <a href="#contact">Contact</a>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
+
+    <section id="home" class="hero">
+        <h1>⚡ 3D Assets Game</h1>
+        <p>High-quality models • Ready to use • Free & Premium</p>
+        <div class="badge-free-premium">🔥 FREE setiap bulan | Premium mulai 15K</div>
+        <a href="#assets" class="cta-button"
+            style="display:inline-block; margin-top:25px; background:#f39c12; padding:12px 36px; border-radius:40px; color:white; text-decoration:none; font-weight:bold; transition:0.2s;"
+            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+            onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='translateY(-3px)'">Jelajahi
+            Asset</a>
+    </section>
+
+    <section id="assets" class="assets-section">
+        <div class="container">
+            <h2 style="text-align:center; font-size:2rem; margin-bottom:1rem;">📦 Koleksi 3D Part</h2>
+            <div class="filters" id="categoryFilters">
+                <button class="filter-btn active" data-filter="all">🌐 Semua</button>
+                <button class="filter-btn" data-filter="arm">🏍️ Swing Arm</button>
+                <button class="filter-btn" data-filter="aksesoris">🧩 Aksesoris</button>
+                <button class="filter-btn" data-filter="mesin">🔥💨 Mesin/Knalpot</button>
+                <button class="filter-btn" data-filter="velg">🛞 Velg/Disc</button>
+                <button class="filter-btn" data-filter="jok">💺 Jok</button>
+                <button class="filter-btn" data-filter="sok">🛑 Shock/Kaliper</button>
+                <button class="filter-btn" data-filter="ban">🛞 Ban</button>
+            </div>
+            <div class="filter-group" id="priceTypeFilters">
+                <button class="filter-btn filter-price-btn" data-price="free">🎁 GRATIS</button>
+                <button class="filter-btn filter-price-btn" data-price="premium">💎 PREMIUM (Berbayar)</button>
+            </div>
+            <div class="assets-grid" id="assets-grid"></div>
+        </div>
+    </section>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>🛒 Keranjang Belanja</h3>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: <strong id="cart-total">Rp 0</strong></p>
+            <button class="checkout-btn" id="checkoutBtn">✅ Checkout via WhatsApp</button>
+        </div>
     </div>
-    <div class="nav-cart" id="cartIcon">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cart-count">0</span>
-    </div>
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      <i class="fas fa-moon"></i> <span>Dark Mode</span>
-    </button>
-  </nav>
+    <div class="cart-overlay" id="cartOverlay"></div>
 
-  <div class="mobile-sidebar" id="mobileSidebar">
-    <a href="#home" onclick="closeMobileMenu()">Home</a>
-    <a href="#assets" onclick="closeMobileMenu()">Assets</a>
-    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-  </div>
-  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
+    <section id="contact" style="padding: 80px 0; text-align:center;">
+        <div class="container">
+            <h2>📞 Kontak & Request</h2>
+            <p>Custom 3D Parts? Chat saja langsung</p>
+            <a href="https://wa.me/6285773664846" target="_blank" class="contact-wa-btn"><i
+                    class="fab fa-whatsapp fa-lg"></i>
+                Chat WhatsApp</a>
+        </div>
+    </section>
 
-  <section id="home" class="hero">
-    <h1>⚡ 3D Assets Game</h1>
-    <p>High-quality models • Ready to use • Free & Premium</p>
-    <div class="badge-free-premium">🔥 FREE setiap bulan | Premium mulai 15K</div>
-    <a href="#assets" class="cta-button"
-      style="display:inline-block; margin-top:25px; background:#f39c12; padding:12px 36px; border-radius:40px; color:white; text-decoration:none; font-weight:bold; transition:0.2s;"
-      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'"
-      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
-      onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='translateY(-3px)'">Jelajahi
-      Asset</a>
-  </section>
+    <footer>
+        <p>© 2025 PGH 3D Asset Store | Free + Premium 3D Models</p>
+    </footer>
 
-  <section id="assets" class="assets-section">
-    <div class="container">
-      <h2 style="text-align:center; font-size:2rem; margin-bottom:1rem;">📦 Koleksi 3D Part</h2>
-      <div class="filters" id="categoryFilters">
-        <button class="filter-btn active" data-filter="all">🌐 Semua</button>
-        <button class="filter-btn" data-filter="arm">🏍️ Swing Arm</button>
-        <button class="filter-btn" data-filter="aksesoris">🧩 Aksesoris</button>
-        <button class="filter-btn" data-filter="mesin">🔥💨 Mesin/Knalpot</button>
-        <button class="filter-btn" data-filter="velg">🛞 Velg/Disc</button>
-        <button class="filter-btn" data-filter="jok">💺 Jok</button>
-        <button class="filter-btn" data-filter="sok">🛑 Shock/Kaliper</button>
-        <button class="filter-btn" data-filter="ban">🛞 Ban</button>
-      </div>
-      <div class="filter-group" id="priceTypeFilters">
-        <button class="filter-btn filter-price-btn" data-price="free">🎁 GRATIS</button>
-        <button class="filter-btn filter-price-btn" data-price="premium">💎 PREMIUM (Berbayar)</button>
-      </div>
-      <div class="assets-grid" id="assets-grid"></div>
-    </div>
-  </section>
+    <script>
+        // ======================= DATA PRODUK LENGKAP (ID 1 sampai 55) =======================
+        const assets = [
+            { id: 1, name: "SWING ARM QTT", desc: "Swing ARM QTT THAILAND FIZR", price: 25000, cat: "arm", images: ["arm qtt1.png", "arm qtt2.png"], poly: "1K", fmt: "Dff, Obj", style: "Realistic", type: "premium" },
+            { id: 2, name: "SWING ARM RACE PRO X01", desc: "Arm CNC RACE PRO VARIO 125/150", price: 25000, cat: "arm", images: ["arm race pro1.png", "arm race pro2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 3, name: "SWING ARM SIJIRO", desc: "Swing Arm shijiro coax GL MAX", price: 25000, cat: "arm", images: ["arm sijiro coak1.png", "arm sijiro coak2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 4, name: "SWING ARM NBR", desc: "SWING ARM NBR AEROX NEW/OLD", price: 25000, cat: "arm", images: ["arm nbr1.png", "arm nbr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 5, name: "STABILIZER MATRIS", desc: "Stabilizers Matris NINJA SS/R", price: 25000, cat: "aksesoris", images: ["matris1.png", "matris2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 6, name: "COVER MESIN NINJA XYZ", desc: "Manisan Ninja cover", price: 25000, cat: "aksesoris", images: ["cvr xyz1.png", "cvr xyz2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 7, name: "TUTUP TANGKY TYGA", desc: "Tutup tangki model TYGA Ninja/GL", price: 20000, cat: "aksesoris", images: ["tyga1.png", "tyga2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 8, name: "BORGOL SHOCK DEPAN", desc: "Bracket shock depan Ninja/RX-King", price: 15000, cat: "aksesoris", images: ["borgol sok depan1.png", "borgol sok depan2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 9, name: "KNALPOT PEKAJAMAN KIDAL", desc: "Knalpot knalpot Herx Hoek", price: 25000, cat: "mesin", images: ["pekajaman1.png", "pekajaman2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 10, name: "RADIATOR VINS AEROX", desc: "Radiator Vins Aerox Nmax", price: 20000, cat: "mesin", images: ["rd vins1.png", "rd vins2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 11, name: "RADIATOR VND NINJA", desc: "Radiator VND Ninja/MX King", price: 20000, cat: "mesin", images: ["rd vnd1.png", "rd vnd2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 12, name: "KNALPOT DGR", desc: "Knalpot Beat Karbu Road Race", price: 25000, cat: "mesin", images: ["dgr1.png", "dgr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 13, name: "VND KZR R17", desc: "Velg VND KZR Ring 17 Metik disc kiri", price: 25000, cat: "velg", images: ["vnd kzr1.png", "vnd kzr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 14, name: "VND SIXSTARS V1", desc: "Velg VND Sixstars Ring 17 Ninja/MX", price: 25000, cat: "velg", images: ["sixstar v1.png", "sixstar v2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 15, name: "JOK NINJA SS", desc: "Jok Ninja Custom Arvi", price: 20000, cat: "jok", images: ["jok arv1.png", "jok arv2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 16, name: "JOK GL CUSTOM", desc: "Jok GL custom parahu fiber", price: 25000, cat: "jok", images: ["jok gl set1.png", "jok gl set2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 17, name: "JOK OZZA SUPRA X", desc: "Jok Ozza Road Race Supra", price: 20000, cat: "jok", images: ["jok ozza1.png", "jok ozza2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 18, name: "JOK MODEL SLIM FIZR", desc: "Jok Fizr slim custom catur", price: 20000, cat: "jok", images: ["jok slim1.png", "jok slim2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 19, name: "DISC MODENAS", desc: "Disc Modenas style KT", price: 20000, cat: "velg", images: ["disc modenas1.png", "disc modenas2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 20, name: "DISC PRC", desc: "Piringan PRC disc kiri 260mm", price: 25000, cat: "velg", images: ["disc prc1.png", "disc prc2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 21, name: "TB CPO", desc: "Throttle Body barel CPO 30mm", price: 25000, cat: "mesin", images: ["tb cpo1.png", "tb cpo2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 22, name: "SHOCK LCM 27", desc: "Bottom shock LCM 27 Vario", price: 25000, cat: "sok", images: ["lcm1.jpg", "lcm2.jpg"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 23, name: "SHOCK 125Z + ADD", desc: "Shock 125Z disc kanan", price: 25000, cat: "sok", images: ["sok 125z 1.png", "sok 125z 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 24, name: "KALIPER FJN", desc: "Kaliper depan kiri FJN", price: 30000, cat: "sok", images: ["fjn1.png", "fjn2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 25, name: "KALIPER 8.1", desc: "Kaliper depan Formula 8.1", price: 30000, cat: "sok", images: ["kaliper 8.1 1.png", "kaliper 8.1 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 26, name: "UNDERBONE RCB MX KING", desc: "Underbone RCB MX King", price: 25000, cat: "aksesoris", images: ["ub rcb mx1.png", "ub rcb mx2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 27, name: "BAN MAXXIS VICTRA R17", desc: "Ban Maxxis Victra ring 17", price: 20000, cat: "ban", images: ["victra1.png", "victra2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 28, name: "BREAKET SELANG GORILA", desc: "Bracket selang gorila clean", price: 15000, cat: "aksesoris", images: ["brkt selang gorila1.png", "brkt selang gorila2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 29, name: "FAIRING HEREX", desc: "Fairing Herex rangka rebah", price: 20000, cat: "aksesoris", images: ["fairing1.png", "fairing2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 30, name: "BREKET HEADLAMP", desc: "Bracket headlamp SJ Project", price: 20000, cat: "aksesoris", images: ["brkt lamp1.png", "brkt lamp2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 31, name: "CVT VARIO BILLET", desc: "CVT Billet Vario style Vietnam", price: 55000, cat: "aksesoris", images: ["cvt vario billet1.png", "cvt vario billet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 32, name: "ARM HYPERTECH", desc: "Swing arm Hypertech Aerox", price: 25000, cat: "arm", images: ["arm hypert1.png", "arm hypert2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 33, name: "MOUNTING VARIO MG", desc: "Mounting panjang Mixiro Vario", price: 25000, cat: "aksesoris", images: ["mounting mg1.png", "mounting mg2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 34, name: "JOK ARVI CATUR", desc: "Jok Mio M3 model catur", price: 20000, cat: "jok", images: ["jok mio1.png", "jok mio2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 35, name: "COVER FILTER VARIO BILLET", desc: "Box filter billet", price: 50000, cat: "aksesoris", images: ["cvr filter bilet1.png", "cvr filter bilet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 36, name: "MASTER REM DEPAN RCB S1", desc: "Master rem tabung Bonamici", price: 25000, cat: "aksesoris", images: ["rcb s1 1.png", "rcb s1 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 37, name: "SWING ARM DKT THAILAND", desc: "Swing arm DKT Monoshock Exciter", price: 40000, cat: "arm", images: ["dkt tai1.png", "dkt tai2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 38, name: "JOK ARVI VIETNAM", desc: "Jok Vario set fiber Vietnam", price: 40000, cat: "jok", images: ["jok viet1.png", "jok viet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 39, name: "BAK CVT MIO", desc: "Bak CVT titanium Mio", price: 65000, cat: "aksesoris", images: ["cvt mio1.png", "cvt mio2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            { id: 40, name: "RIMS JRP TROMOL BECAK", desc: "rim set tromol becak non metik ring 17", price: 25000, cat: "velg", images: ["jrp rims1.png", "jrp rims2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            // PRODUK FREE
+            { id: 41, name: "VELG VND SET BAN", desc: "VELG VND NEW SPEED R17 FOR MX KING DAN SEJENISNYA", price: 0, cat: "velg", images: ["velg vnd free1.png", "velg vnd free2.png"], poly: "800", fmt: "OBJ", style: "Sport", type: "free", downloadLink: "https://sfl.gl/zRU4" },
+            { id: 42, name: "FRAME PLAT HTS", desc: "HAHA HTS KASIAN WKWK", price: 0, cat: "aksesoris", images: ["plat1.png", "plat2.png"], poly: "800", fmt: "OBJ", style: "soft", type: "free", downloadLink: "https://sfl.gl/UkDj2DN" },
+            { id: 43, name: "KALIPER GROZA", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["kaliper groza free1.png", "kaliper groza free2.png"], poly: "800", fmt: "OBJ", style: "soft", type: "free", downloadLink: "https://sfl.gl/hO9Pp" },
+            { id: 44, name: "VELG VND BINTANG LAUT", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "velg", images: ["vnd bintang laut free1.jpg", "vnd bintang laut free1.jpg"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/V6a6x0" },
+            { id: 45, name: "BAK CVT DT10", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["cvt dt10 1.png", "cvt dt10 2.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/kYn6tfU" },
+            { id: 46, name: "SHOCK BUBUT TAILAND", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["shock bubut1.png", "shock bubut1.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/G0uq" },
+            { id: 47, name: "CVT AIRBLADE", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["cvt airblade.png", "cvt airblade2.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/vdni" },
+            { id: 48, name: "FOOTSTEP SKUPI", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["step skupi.png", "step skupi2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/HFw0v" },
+            { id: 49, name: "DISC GALFER", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "velg", images: ["disc galver1.png", "disc galver2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/b3KRv" },
+            { id: 50, name: "BAN KINGLAND VELLOX CTX", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "ban", images: ["ban drag1.png", "ban drag2.png"], poly: "800", fmt: "OBJ", style: "resing abieezz", type: "free", downloadLink: "https://sfl.gl/JojuTd" },
+            { id: 51, name: "SHOCK GROZA", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["shock groza1.png", "shock groza2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/2h82uwWl" },
+            { id: 52, name: "TUTUP OLI CNC", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["tutup oli cnc1.png", "tutup oli cnc2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/3w0W67Yu" },
+            { id: 53, name: "SWING ARM SHIJIRO EXTREME", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["arm sijiro extreme1.png", "arm sijiro extreme2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/2HDGf" },
+            { id: 54, name: "BAN MP76 R17", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "ban", images: ["ban mp76 1.png", "ban mp76 2.png"], poly: "800", fmt: "OBJ", style: "resing", type: "free", downloadLink: "https://sfl.gl/6yIijD" },
+            { id: 55, name: "SHOCK OHLINS", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["sok ohlins1.png", "sok ohlins2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/vMB2z" }
+        ];
 
-  <div class="cart-sidebar" id="cart-sidebar">
-    <div class="cart-header">
-      <h3>🛒 Keranjang Belanja</h3>
-      <button class="close-cart" id="closeCartBtn">&times;</button>
-    </div>
-    <div class="cart-items" id="cart-items"></div>
-    <div class="cart-total">
-      <p>Total: <strong id="cart-total">Rp 0</strong></p>
-      <button class="checkout-btn" id="checkoutBtn">✅ Checkout via WhatsApp</button>
-    </div>
-  </div>
-  <div class="cart-overlay" id="cartOverlay"></div>
+        // ========== LOGIKA AWAL: BELUM ADA FILTER HARGA ==========
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let filterCategory = "all";
+        let filterPriceType = null;
 
-  <section id="contact" style="padding: 80px 0; text-align:center;">
-    <div class="container">
-      <h2>📞 Kontak & Request</h2>
-      <p>Custom 3D Parts? Chat saja langsung</p>
-      <a href="https://wa.me/6285773664846" target="_blank" class="contact-wa-btn"><i class="fab fa-whatsapp fa-lg"></i>
-        Chat WhatsApp</a>
-    </div>
-  </section>
+        const gridEl = document.getElementById("assets-grid");
+        const cartCountSpan = document.getElementById("cart-count");
+        const cartSidebar = document.getElementById("cart-sidebar");
+        const cartItemsDiv = document.getElementById("cart-items");
+        const cartTotalSpan = document.getElementById("cart-total");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+        const cartOverlay = document.getElementById("cartOverlay");
 
-  <footer>
-    <p>© 2025 PGH 3D Asset Store | Free + Premium 3D Models</p>
-  </footer>
-
-  <script>
-    // ---------------------------- ASSETS ----------------------------
-    const assets = [
-      {
-        id: 1,
-        name: "SWING ARM QTT",
-        desc: "Swing ARM QTT THAILAND FIZR",
-        price: 25000,
-        cat: "arm",
-        images: ["arm qtt1.png", "arm qtt2.png"],
-        poly: "1K",
-        fmt: "Dff, Obj",
-        style: "Realistic",
-        type: "premium"
-      },
-      {
-        id: 2,
-        name: "SWING ARM RACE PRO X01",
-        desc: "Arm CNC RACE PRO VARIO 125/150",
-        price: 25000,
-        cat: "arm",
-        images: ["arm race pro1.png", "arm race pro2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 3,
-        name: "SWING ARM SIJIRO",
-        desc: "Swing Arm shijiro coax GL MAX",
-        price: 25000,
-        cat: "arm",
-        images: ["arm sijiro coak1.png", "arm sijiro coak2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 4,
-        name: "SWING ARM NBR",
-        desc: "SWING ARM NBR AEROX NEW/OLD",
-        price: 25000,
-        cat: "arm",
-        images: ["arm nbr1.png", "arm nbr2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 5,
-        name: "STABILIZER MATRIS",
-        desc: "Stabilizers Matris NINJA SS/R",
-        price: 25000,
-        cat: "aksesoris",
-        images: ["matris1.png", "matris2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 6,
-        name: "COVER MESIN NINJA XYZ",
-        desc: "Manisan Ninja cover",
-        price: 25000,
-        cat: "aksesoris",
-        images: ["cvr xyz1.png", "cvr xyz2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 7,
-        name: "TUTUP TANGKY TYGA",
-        desc: "Tutup tangki model TYGA Ninja/GL",
-        price: 20000,
-        cat: "aksesoris",
-        images: ["tyga1.png", "tyga2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 8,
-        name: "BORGOL SHOCK DEPAN",
-        desc: "Bracket shock depan Ninja/RX-King",
-        price: 15000,
-        cat: "aksesoris",
-        images: ["borgol sok depan1.png", "borgol sok depan2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 9,
-        name: "KNALPOT PEKAJAMAN KIDAL",
-        desc: "Knalpot knalpot Herx Hoek",
-        price: 25000,
-        cat: "mesin",
-        images: ["pekajaman1.png", "pekajaman2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 10,
-        name: "RADIATOR VINS AEROX",
-        desc: "Radiator Vins Aerox Nmax",
-        price: 20000,
-        cat: "mesin",
-        images: ["rd vins1.png", "rd vins2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 11,
-        name: "RADIATOR VND NINJA",
-        desc: "Radiator VND Ninja/MX King",
-        price: 20000,
-        cat: "mesin",
-        images: ["rd vnd1.png", "rd vnd2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 12,
-        name: "KNALPOT DGR",
-        desc: "Knalpot Beat Karbu Road Race",
-        price: 25000,
-        cat: "mesin",
-        images: ["dgr1.png", "dgr2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 13,
-        name: "VND KZR R17",
-        desc: "Velg VND KZR Ring 17 Metik disc kiri",
-        price: 25000,
-        cat: "velg",
-        images: ["vnd kzr1.png", "vnd kzr2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 14,
-        name: "VND SIXSTARS V1",
-        desc: "Velg VND Sixstars Ring 17 Ninja/MX",
-        price: 25000,
-        cat: "velg",
-        images: ["sixstar v1.png", "sixstar v2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 15,
-        name: "JOK NINJA SS",
-        desc: "Jok Ninja Custom Arvi",
-        price: 20000,
-        cat: "jok",
-        images: ["jok arv1.png", "jok arv2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 16,
-        name: "JOK GL CUSTOM",
-        desc: "Jok GL custom parahu fiber",
-        price: 25000,
-        cat: "jok",
-        images: ["jok gl set1.png", "jok gl set2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 17,
-        name: "JOK OZZA SUPRA X",
-        desc: "Jok Ozza Road Race Supra",
-        price: 20000,
-        cat: "jok",
-        images: ["jok ozza1.png", "jok ozza2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 18,
-        name: "JOK MODEL SLIM FIZR",
-        desc: "Jok Fizr slim custom catur",
-        price: 20000,
-        cat: "jok",
-        images: ["jok slim1.png", "jok slim2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 19,
-        name: "DISC MODENAS",
-        desc: "Disc Modenas style KT",
-        price: 20000,
-        cat: "velg",
-        images: ["disc modenas1.png", "disc modenas2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 20,
-        name: "DISC PRC",
-        desc: "Piringan PRC disc kiri 260mm",
-        price: 25000,
-        cat: "velg",
-        images: ["disc prc1.png", "disc prc2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 21,
-        name: "TB CPO",
-        desc: "Throttle Body barel CPO 30mm",
-        price: 25000,
-        cat: "mesin",
-        images: ["tb cpo1.png", "tb cpo2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 22,
-        name: "SHOCK LCM 27",
-        desc: "Bottom shock LCM 27 Vario",
-        price: 25000,
-        cat: "sok",
-        images: ["lcm1.jpg", "lcm2.jpg"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 23,
-        name: "SHOCK 125Z + ADD",
-        desc: "Shock 125Z disc kanan",
-        price: 25000,
-        cat: "sok",
-        images: ["sok 125z 1.png", "sok 125z 2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 24,
-        name: "KALIPER FJN",
-        desc: "Kaliper depan kiri FJN",
-        price: 30000,
-        cat: "sok",
-        images: ["fjn1.png", "fjn2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 25,
-        name: "KALIPER 8.1",
-        desc: "Kaliper depan Formula 8.1",
-        price: 30000,
-        cat: "sok",
-        images: ["kaliper 8.1 1.png", "kaliper 8.1 2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 26,
-        name: "UNDERBONE RCB MX KING",
-        desc: "Underbone RCB MX King",
-        price: 25000,
-        cat: "aksesoris",
-        images: ["ub rcb mx1.png", "ub rcb mx2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 27,
-        name: "BAN MAXXIS VICTRA R17",
-        desc: "Ban Maxxis Victra ring 17",
-        price: 20000,
-        cat: "ban",
-        images: ["victra1.png", "victra2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 28,
-        name: "BREAKET SELANG GORILA",
-        desc: "Bracket selang gorila clean",
-        price: 15000,
-        cat: "aksesoris",
-        images: ["brkt selang gorila1.png", "brkt selang gorila2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 29,
-        name: "FAIRING HEREX",
-        desc: "Fairing Herex rangka rebah",
-        price: 20000,
-        cat: "aksesoris",
-        images: ["fairing1.png", "fairing2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 30,
-        name: "BREKET HEADLAMP",
-        desc: "Bracket headlamp SJ Project",
-        price: 20000,
-        cat: "aksesoris",
-        images: ["brkt lamp1.png", "brkt lamp2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 31,
-        name: "CVT VARIO BILLET",
-        desc: "CVT Billet Vario style Vietnam",
-        price: 55000,
-        cat: "aksesoris",
-        images: ["cvt vario billet1.png", "cvt vario billet2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 32,
-        name: "ARM HYPERTECH",
-        desc: "Swing arm Hypertech Aerox",
-        price: 25000,
-        cat: "arm",
-        images: ["arm hypert1.png", "arm hypert2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 33,
-        name: "MOUNTING VARIO MG",
-        desc: "Mounting panjang Mixiro Vario",
-        price: 25000,
-        cat: "aksesoris",
-        images: ["mounting mg1.png", "mounting mg2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 34,
-        name: "JOK ARVI CATUR",
-        desc: "Jok Mio M3 model catur",
-        price: 20000,
-        cat: "jok",
-        images: ["jok mio1.png", "jok mio2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 35,
-        name: "COVER FILTER VARIO BILLET",
-        desc: "Box filter billet",
-        price: 50000,
-        cat: "aksesoris",
-        images: ["cvr filter bilet1.png", "cvr filter bilet2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 36,
-        name: "MASTER REM DEPAN RCB S1",
-        desc: "Master rem tabung Bonamici",
-        price: 25000,
-        cat: "aksesoris",
-        images: ["rcb s1 1.png", "rcb s1 2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 37,
-        name: "SWING ARM DKT THAILAND",
-        desc: "Swing arm DKT Monoshock Exciter",
-        price: 40000,
-        cat: "arm",
-        images: ["dkt tai1.png", "dkt tai2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 38,
-        name: "JOK ARVI VIETNAM",
-        desc: "Jok Vario set fiber Vietnam",
-        price: 40000,
-        cat: "jok",
-        images: ["jok viet1.png", "jok viet2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 39,
-        name: "BAK CVT MIO",
-        desc: "Bak CVT titanium Mio",
-        price: 65000,
-        cat: "aksesoris",
-        images: ["cvt mio1.png", "cvt mio2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      {
-        id: 40,
-        name: "RIMS JRP TROMOL BECAK",
-        desc: "rim set tromol becak non metik ring 17",
-        price: 25000,
-        cat: "velg",
-        images: ["jrp rims1.png", "jrp rims2.png"],
-        poly: "1K",
-        fmt: "Dff, OBJ",
-        style: "Stylized",
-        type: "premium"
-      },
-      // ========== DATA BASE PRODUK FREE ==========
-      {
-        id: 41,
-        name: "VELG VND SET BAN",
-        desc: "VELG VND NEW SPEED R17 FOR MX KING DAN SEJENISNYA",
-        price: 0,
-        cat: "velg",
-        images: ["velg vnd free1.png", "velg vnd free2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "Sport",
-        type: "free",
-        downloadLink: "https://sfl.gl/zRU4"
-      },
-      {
-        id: 42,
-        name: "FRAME PLAT HTS",
-        desc: "HAHA HTS KASIAN WKWK",
-        price: 0,
-        cat: "aksesoris",
-        images: ["plat1.png", "plat2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "soft",
-        type: "free",
-        downloadLink: "https://sfl.gl/UkDj2DN"
-      },
-      {
-        id: 43,
-        name: "KALIPER GROZA",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "sok",
-        images: ["kaliper groza free1.png", "kaliper groza free2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "soft",
-        type: "free",
-        downloadLink: "https://sfl.gl/hO9Pp"
-      },
-      {
-        id: 44,
-        name: "VELG VND BINTANG LAUT",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "velg",
-        images: ["vnd bintang laut free1.jpg", "vnd bintang laut free1.jpg"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/V6a6x0"
-      },
-      {
-        id: 45,
-        name: "BAK CVT DT10",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "aksesoris",
-        images: ["cvt dt10 1.png", "cvt dt10 2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "recing",
-        type: "free",
-        downloadLink: "https://sfl.gl/kYn6tfU"
-      },
-      {
-        id: 46,
-        name: "SHOCK BUBUT TAILAND",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "sok",
-        images: ["shock bubut1.png", "shock bubut1.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "recing",
-        type: "free",
-        downloadLink: "https://sfl.gl/G0uq"
-      },
-      {
-        id: 47,
-        name: "CVT AIRBLADE",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "aksesoris",
-        images: ["cvt airblade.png", "cvt airblade2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "recing",
-        type: "free",
-        downloadLink: "https://sfl.gl/vdni"
-      },
-      {
-        id: 48,
-        name: "FOOTSTEP SKUPI",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "aksesoris",
-        images: ["step skupi.png", "step skupi2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/HFw0v"
-      },
-      {
-        id: 49,
-        name: "DISC GALFER",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "velg",
-        images: ["disc galver1.png", "disc galver2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/b3KRv"
-      },
-      {
-        id: 50,
-        name: "BAN KINGLAND VELLOX CTX",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "ban",
-        images: ["ban drag1.png", "ban drag2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "resing abieezz",
-        type: "free",
-        downloadLink: "https://sfl.gl/JojuTd"
-      },
-      {
-        id: 51,
-        name: "SHOCK GROZA",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "sok",
-        images: ["shock groza1.png", "shock groza2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/2h82uwWl"
-      },
-      {
-        id: 52,
-        name: "TUTUP OLI CNC",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "aksesoris",
-        images: ["tutup oli cnc1.png", "tutup oli cnc2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/3w0W67Yu"
-      },
-      {
-        id: 53,
-        name: "SWING ARM SHIJIRO EXTREME",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "aksesoris",
-        images: ["arm sijiro extreme1.png", "arm sijiro extreme2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/2HDGf"
-      },
-      {
-        id: 54,
-        name: "BAN MP76 R17",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "ban",
-        images: ["ban mp76 1.png", "ban mp76 2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "resing",
-        type: "free",
-        downloadLink: "https://sfl.gl/6yIijD"
-      },
-      {
-        id: 55,
-        name: "SHOCK OHLINS",
-        desc: "PNP SENDIRI YA JANGAN MANJA",
-        price: 0,
-        cat: "sok",
-        images: ["sok ohlins1.png", "sok ohlins2.png"],
-        poly: "800",
-        fmt: "OBJ",
-        style: "proper",
-        type: "free",
-        downloadLink: "https://sfl.gl/vMB2z"
-      },
-    ];
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let filterCategory = "all";
-    let filterPriceType = "all";
-
-    const gridEl = document.getElementById("assets-grid");
-    const cartCountSpan = document.getElementById("cart-count");
-    const cartSidebar = document.getElementById("cart-sidebar");
-    const cartItemsDiv = document.getElementById("cart-items");
-    const cartTotalSpan = document.getElementById("cart-total");
-    const checkoutBtn = document.getElementById("checkoutBtn");
-    const cartOverlay = document.getElementById("cartOverlay");
-
-    // ========== DARK MODE ==========
-    function initDarkMode() {
-      const savedTheme = localStorage.getItem('darkMode');
-      if (savedTheme === 'enabled') {
-        document.body.classList.add('dark');
-        updateDarkModeButton(true);
-      } else if (savedTheme === 'disabled') {
-        document.body.classList.remove('dark');
-        updateDarkModeButton(false);
-      } else {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark');
-          updateDarkModeButton(true);
-        } else {
-          updateDarkModeButton(false);
+        // Dark mode
+        function initDarkMode() {
+            const savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'enabled') {
+                document.body.classList.add('dark');
+                updateDarkModeButton(true);
+            } else if (savedTheme === 'disabled') {
+                document.body.classList.remove('dark');
+                updateDarkModeButton(false);
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark');
+                    updateDarkModeButton(true);
+                } else {
+                    updateDarkModeButton(false);
+                }
+            }
         }
-      }
-    }
 
-    function updateDarkModeButton(isDark) {
-      const btn = document.getElementById('darkModeToggle');
-      if (isDark) {
-        btn.innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
-      } else {
-        btn.innerHTML = '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
-      }
-    }
+        function updateDarkModeButton(isDark) {
+            const btn = document.getElementById('darkModeToggle');
+            if (isDark) {
+                btn.innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
+            } else {
+                btn.innerHTML = '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+            }
+        }
 
-    function toggleDarkMode() {
-      if (document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark');
-        localStorage.setItem('darkMode', 'disabled');
-        updateDarkModeButton(false);
-      } else {
-        document.body.classList.add('dark');
-        localStorage.setItem('darkMode', 'enabled');
-        updateDarkModeButton(true);
-      }
-    }
+        function toggleDarkMode() {
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('dark');
+                localStorage.setItem('darkMode', 'disabled');
+                updateDarkModeButton(false);
+            } else {
+                document.body.classList.add('dark');
+                localStorage.setItem('darkMode', 'enabled');
+                updateDarkModeButton(true);
+            }
+        }
 
-    document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-    // ========== END DARK MODE ==========
+        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 
-    function formatRupiah(num) {
-      if (num === 0) return "GRATIS";
-      return 'Rp ' + num.toLocaleString('id-ID');
-    }
+        function formatRupiah(num) {
+            if (num === 0) return "GRATIS";
+            return 'Rp ' + num.toLocaleString('id-ID');
+        }
 
-    // ========== CART FUNCTIONS ==========
-    function addToCart(id) {
-      const asset = assets.find(a => a.id === id);
-      if (!asset || asset.type !== "premium") return;
-      if (cart.some(item => item.id === id)) {
-        showNotif(`⚠️ ${asset.name} sudah ada di keranjang`);
-        return;
-      }
-      cart.push({ ...asset, qty: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart();
-      renderAssets();
-      showNotif(`✔ ${asset.name} ditambahkan ke keranjang`);
-    }
+        // Cart functions
+        function addToCart(id) {
+            const asset = assets.find(a => a.id === id);
+            if (!asset || asset.type !== "premium") return;
+            if (cart.some(item => item.id === id)) {
+                showNotif(`⚠️ ${asset.name} sudah ada di keranjang`);
+                return;
+            }
+            cart.push({ ...asset, qty: 1 });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+            renderAssets();
+            showNotif(`✔ ${asset.name} ditambahkan ke keranjang`);
+        }
 
-    function removeFromCart(id) {
-      cart = cart.filter(item => item.id !== id);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart();
-      renderAssets();
-    }
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+            renderAssets();
+        }
 
-    function renderCart() {
-      if (cartItemsDiv) {
-        cartItemsDiv.innerHTML = cart.map(item => `
+        function renderCart() {
+            if (cartItemsDiv) {
+                cartItemsDiv.innerHTML = cart.map(item => `
           <div class="cart-item">
             <div class="cart-item-info">
               <div class="cart-item-name">${item.name}</div>
@@ -1792,76 +1286,91 @@
             <button class="remove-item" onclick="removeFromCart(${item.id})">Hapus</button>
           </div>
         `).join('');
-        const total = cart.reduce((sum, i) => sum + i.price, 0);
-        cartTotalSpan.innerText = formatRupiah(total);
-        cartCountSpan.innerText = cart.length;
-        checkoutBtn.disabled = cart.length === 0;
-      }
-    }
-
-    function isInCart(id) {
-      return cart.some(item => item.id === id);
-    }
-
-    document.getElementById("cartIcon").addEventListener("click", () => {
-      cartSidebar.classList.add("active");
-      cartOverlay.classList.add("active");
-    });
-    document.getElementById("closeCartBtn").addEventListener("click", () => {
-      cartSidebar.classList.remove("active");
-      cartOverlay.classList.remove("active");
-    });
-    cartOverlay.addEventListener("click", () => {
-      cartSidebar.classList.remove("active");
-      cartOverlay.classList.remove("active");
-    });
-
-    checkoutBtn.addEventListener("click", () => {
-      if (cart.length === 0) return;
-      let itemsList = cart.map(item => `• ${item.name} - ${formatRupiah(item.price)}`).join("\n");
-      let total = cart.reduce((sum, i) => sum + i.price, 0);
-      let message = `APAKAH INI MASIH ADA?\n${itemsList}\n\nTotal: ${formatRupiah(total)}\n\nMohon konfirmasi dan info pembayaran. Terima kasih.`;
-      let encodedMsg = encodeURIComponent(message);
-      window.open(`https://wa.me/6285773664846?text=${encodedMsg}`, "_blank");
-    });
-    // ========== END CART FUNCTIONS ==========
-
-    function downloadFreeAsset(assetId) {
-      const asset = assets.find(a => a.id === assetId);
-      if (asset && asset.type === "free" && asset.downloadLink) {
-        window.open(asset.downloadLink, "_blank");
-        showNotif(`📥 Mendownload ${asset.name}...`);
-      } else if (asset && asset.type === "free" && !asset.downloadLink) {
-        showNotif(`⚠️ Link download untuk ${asset.name} belum tersedia. Hubungi admin.`);
-      } else {
-        showNotif(`❌ Produk ini tidak bisa diunduh langsung.`);
-      }
-    }
-
-    function renderAssets() {
-      let filtered = assets.filter(a => {
-        if (filterCategory !== "all" && a.cat !== filterCategory) return false;
-        if (filterPriceType === "free" && a.type !== "free") return false;
-        if (filterPriceType === "premium" && a.type !== "premium") return false;
-        return true;
-      });
-
-      gridEl.innerHTML = filtered.map(a => {
-        let shareButton = `<button class="share-btn" onclick="shareProduct(${a.id})"><i class="fas fa-share-alt"></i> Share</button>`;
-        let buttonsHtml = '';
-
-        if (a.type === "free") {
-          let downloadButton = a.downloadLink
-            ? `<button class="download-btn" onclick="downloadFreeAsset(${a.id})"><i class="fas fa-download"></i> Unduh Gratis</button>`
-            : `<button class="download-btn" onclick="downloadFreeAsset(${a.id})" style="background:#95a5a6;"><i class="fas fa-download"></i> Link Tidak Tersedia</button>`;
-          buttonsHtml = `<div class="button-group">${downloadButton}${shareButton}</div>`;
-        } else {
-          let isAdded = isInCart(a.id);
-          let addButton = `<button class="add-to-cart" ${isAdded ? "disabled" : ""} onclick="addToCart(${a.id})">${isAdded ? "✅ Di Keranjang" : "🛒 Add to Cart"}</button>`;
-          buttonsHtml = `<div class="button-group">${addButton}${shareButton}</div>`;
+                const total = cart.reduce((sum, i) => sum + i.price, 0);
+                cartTotalSpan.innerText = formatRupiah(total);
+                cartCountSpan.innerText = cart.length;
+                checkoutBtn.disabled = cart.length === 0;
+            }
         }
 
-        return `
+        function isInCart(id) {
+            return cart.some(item => item.id === id);
+        }
+
+        document.getElementById("cartIcon").addEventListener("click", () => {
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+        });
+        document.getElementById("closeCartBtn").addEventListener("click", () => {
+            cartSidebar.classList.remove("active");
+            cartOverlay.classList.remove("active");
+        });
+        cartOverlay.addEventListener("click", () => {
+            cartSidebar.classList.remove("active");
+            cartOverlay.classList.remove("active");
+        });
+
+        checkoutBtn.addEventListener("click", () => {
+            if (cart.length === 0) return;
+            let itemsList = cart.map(item => `• ${item.name} - ${formatRupiah(item.price)}`).join("\n");
+            let total = cart.reduce((sum, i) => sum + i.price, 0);
+            let message =
+                `APAKAH INI MASIH ADA?\n${itemsList}\n\nTotal: ${formatRupiah(total)}\n\nMohon konfirmasi dan info pembayaran. Terima kasih.`;
+            let encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/6285773664846?text=${encodedMsg}`, "_blank");
+        });
+
+        function downloadFreeAsset(assetId) {
+            const asset = assets.find(a => a.id === assetId);
+            if (asset && asset.type === "free" && asset.downloadLink) {
+                window.open(asset.downloadLink, "_blank");
+                showNotif(`📥 Mendownload ${asset.name}...`);
+            } else if (asset && asset.type === "free" && !asset.downloadLink) {
+                showNotif(`⚠️ Link download untuk ${asset.name} belum tersedia. Hubungi admin.`);
+            } else {
+                showNotif(`❌ Produk ini tidak bisa diunduh langsung.`);
+            }
+        }
+
+        // RENDER PRODUK (dengan pengecekan filterPriceType)
+        function renderAssets() {
+            if (filterPriceType === null) {
+                gridEl.innerHTML =
+                    `<div class="empty-message"><i class="fas fa-hand-pointer fa-2x"></i><br><br>Silakan pilih <strong>GRATIS</strong> atau <strong>PREMIUM</strong> terlebih dahulu untuk melihat koleksi.</div>`;
+                return;
+            }
+
+            let filtered = assets.filter(a => {
+                if (filterCategory !== "all" && a.cat !== filterCategory) return false;
+                if (filterPriceType === "free" && a.type !== "free") return false;
+                if (filterPriceType === "premium" && a.type !== "premium") return false;
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                gridEl.innerHTML =
+                    `<div class="empty-message"><i class="fas fa-box-open fa-2x"></i><br><br>Tidak ada produk dalam kategori ini.</div>`;
+                return;
+            }
+
+            gridEl.innerHTML = filtered.map(a => {
+                let shareButton =
+                    `<button class="share-btn" onclick="shareProduct(${a.id})"><i class="fas fa-share-alt"></i> Share</button>`;
+                let buttonsHtml = '';
+
+                if (a.type === "free") {
+                    let downloadButton = a.downloadLink ?
+                        `<button class="download-btn" onclick="downloadFreeAsset(${a.id})"><i class="fas fa-download"></i> Unduh Gratis</button>` :
+                        `<button class="download-btn" onclick="downloadFreeAsset(${a.id})" style="background:#95a5a6;"><i class="fas fa-download"></i> Link Tidak Tersedia</button>`;
+                    buttonsHtml = `<div class="button-group">${downloadButton}${shareButton}</div>`;
+                } else {
+                    let isAdded = isInCart(a.id);
+                    let addButton =
+                        `<button class="add-to-cart" ${isAdded ? "disabled" : ""} onclick="addToCart(${a.id})">${isAdded ? "✅ Di Keranjang" : "🛒 Add to Cart"}</button>`;
+                    buttonsHtml = `<div class="button-group">${addButton}${shareButton}</div>`;
+                }
+
+                return `
         <div class="asset-card" id="product-${a.id}">
           <div class="asset-image">
             <div class="image-slider" id="slider-${a.id}">
@@ -1883,83 +1392,102 @@
           </div>
         </div>
       `;
-      }).join('');
-    }
+            }).join('');
+        }
 
-    window.slideImage = (assetId, dir) => {
-      const slider = document.getElementById(`slider-${assetId}`);
-      if (!slider) return;
-      const dots = slider.parentElement.querySelectorAll('.slider-dot');
-      const slides = slider.querySelectorAll('.image-slide');
-      let currentIdx = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      let newIdx = currentIdx + dir;
-      if (newIdx < 0) newIdx = slides.length - 1;
-      if (newIdx >= slides.length) newIdx = 0;
-      slider.style.transform = `translateX(-${newIdx * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === newIdx));
-    };
+        window.slideImage = (assetId, dir) => {
+            const slider = document.getElementById(`slider-${assetId}`);
+            if (!slider) return;
+            const dots = slider.parentElement.querySelectorAll('.slider-dot');
+            const slides = slider.querySelectorAll('.image-slide');
+            let currentIdx = Array.from(dots).findIndex(d => d.classList.contains('active'));
+            let newIdx = currentIdx + dir;
+            if (newIdx < 0) newIdx = slides.length - 1;
+            if (newIdx >= slides.length) newIdx = 0;
+            slider.style.transform = `translateX(-${newIdx * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === newIdx));
+        };
 
-    window.goToSlide = (assetId, idx) => {
-      const slider = document.getElementById(`slider-${assetId}`);
-      if (!slider) return;
-      const dots = slider.parentElement.querySelectorAll('.slider-dot');
-      slider.style.transform = `translateX(-${idx * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
-    };
+        window.goToSlide = (assetId, idx) => {
+            const slider = document.getElementById(`slider-${assetId}`);
+            if (!slider) return;
+            const dots = slider.parentElement.querySelectorAll('.slider-dot');
+            slider.style.transform = `translateX(-${idx * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
+        };
 
-    function showNotif(msg) {
-      const notif = document.createElement("div");
-      notif.className = "notification";
-      notif.innerText = msg;
-      document.body.appendChild(notif);
-      setTimeout(() => notif.remove(), 2800);
-    }
+        function showNotif(msg) {
+            const notif = document.createElement("div");
+            notif.className = "notification";
+            notif.innerText = msg;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 2800);
+        }
 
-    document.querySelectorAll("#categoryFilters .filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#categoryFilters .filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filterCategory = btn.dataset.filter;
-        renderAssets();
-      });
-    });
-    document.querySelectorAll("#priceTypeFilters .filter-price-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#priceTypeFilters .filter-price-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filterPriceType = btn.dataset.price;
-        renderAssets();
-      });
-    });
+        // Event listener untuk filter kategori
+        document.querySelectorAll("#categoryFilters .filter-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (filterPriceType === null) {
+                    showNotif("⚠️ Pilih GRATIS atau PREMIUM terlebih dahulu!");
+                    return;
+                }
+                document.querySelectorAll("#categoryFilters .filter-btn").forEach(b => b.classList
+                    .remove("active"));
+                btn.classList.add("active");
+                filterCategory = btn.dataset.filter;
+                renderAssets();
+            });
+        });
 
-    window.shareProduct = (id) => {
-      let url = window.location.href.split("?")[0] + `?product=${id}`;
-      if (navigator.share) navigator.share({ title: "PGH 3D Asset", text: "Lihat asset ini", url });
-      else { navigator.clipboard.writeText(url); showNotif("Link produk disalin! ✅"); }
-    };
+        // Event listener untuk filter harga
+        document.querySelectorAll("#priceTypeFilters .filter-price-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const selectedPrice = btn.dataset.price;
+                document.querySelectorAll("#priceTypeFilters .filter-price-btn").forEach(b => b.classList
+                    .remove("active"));
+                btn.classList.add("active");
+                filterPriceType = selectedPrice;
+                filterCategory = "all";
+                document.querySelectorAll("#categoryFilters .filter-btn").forEach(b => b.classList.remove(
+                    "active"));
+                document.querySelector("#categoryFilters .filter-btn[data-filter='all']").classList.add(
+                "active");
+                renderAssets();
+            });
+        });
 
-    window.addEventListener("load", () => {
-      initDarkMode();
-      renderCart();
-      renderAssets();
-      const param = new URLSearchParams(location.search).get("product");
-      if (param) setTimeout(() => { let el = document.getElementById("product-" + param); if (el) { el.scrollIntoView({ behavior: "smooth" }); el.classList.add("highlight-product"); } }, 400);
-    });
+        window.shareProduct = (id) => {
+            let url = window.location.href.split("?")[0] + `?product=${id}`;
+            if (navigator.share) navigator.share({ title: "PGH 3D Asset", text: "Lihat asset ini", url });
+            else { navigator.clipboard.writeText(url);
+                showNotif("Link produk disalin! ✅"); }
+        };
 
-    window.toggleMobileMenu = function () {
-      document.getElementById("mobileSidebar").classList.toggle("show");
-      document.getElementById("sidebarOverlay").classList.toggle("show");
-      let icon = document.getElementById("menuIcon");
-      if (document.getElementById("mobileSidebar").classList.contains("show")) icon.classList.replace("fa-bars", "fa-times");
-      else icon.classList.replace("fa-times", "fa-bars");
-    };
+        window.addEventListener("load", () => {
+            initDarkMode();
+            renderCart();
+            renderAssets();
+            const param = new URLSearchParams(location.search).get("product");
+            if (param) setTimeout(() => { let el = document.getElementById("product-" + param); if (el) { el
+                        .scrollIntoView({ behavior: "smooth" });
+                    el.classList.add("highlight-product"); } }, 400);
+        });
 
-    window.closeMobileMenu = function () {
-      document.getElementById("mobileSidebar").classList.remove("show");
-      document.getElementById("sidebarOverlay").classList.remove("show");
-      document.getElementById("menuIcon").classList.replace("fa-times", "fa-bars");
-    };
-  </script>
+        window.toggleMobileMenu = function() {
+            document.getElementById("mobileSidebar").classList.toggle("show");
+            document.getElementById("sidebarOverlay").classList.toggle("show");
+            let icon = document.getElementById("menuIcon");
+            if (document.getElementById("mobileSidebar").classList.contains("show")) icon.classList.replace(
+                "fa-bars", "fa-times");
+            else icon.classList.replace("fa-times", "fa-bars");
+        };
+
+        window.closeMobileMenu = function() {
+            document.getElementById("mobileSidebar").classList.remove("show");
+            document.getElementById("sidebarOverlay").classList.remove("show");
+            document.getElementById("menuIcon").classList.replace("fa-times", "fa-bars");
+        };
+    </script>
 </body>
 
 </html>
