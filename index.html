@@ -126,6 +126,7 @@
             background: linear-gradient(135deg, #1a6fb5, #3498db, #1a6fb5);
             background-size: 200% 200%;
         }
+
         .nav-item-home:hover {
             background: linear-gradient(135deg, #1e80cc, #5dade2, #1e80cc);
             background-size: 200% 200%;
@@ -140,6 +141,7 @@
             background: linear-gradient(135deg, #c0720e, #f39c12, #c0720e);
             background-size: 200% 200%;
         }
+
         .nav-item-assets:hover {
             background: linear-gradient(135deg, #d68910, #f5b041, #d68910);
             background-size: 200% 200%;
@@ -154,6 +156,7 @@
             background: linear-gradient(135deg, #1a8a4a, #27ae60, #1a8a4a);
             background-size: 200% 200%;
         }
+
         .nav-item-contact:hover {
             background: linear-gradient(135deg, #1fa35a, #2ecc71, #1fa35a);
             background-size: 200% 200%;
@@ -167,9 +170,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -187,34 +192,40 @@
             background-size: 200% 200%;
             border-color: rgba(255, 255, 255, 0.1);
         }
+
         body.dark .nav-item-home:hover {
             background: linear-gradient(135deg, #1f6dad, #3498db, #1f6dad);
             background-size: 200% 200%;
             animation: gradientShift 2.5s ease infinite;
             box-shadow: 0 6px 22px rgba(52, 152, 219, 0.5), 0 0 0 3px rgba(52, 152, 219, 0.25);
         }
+
         body.dark .nav-item-assets {
             background: linear-gradient(135deg, #7d4e0b, #b8760f, #7d4e0b);
             background-size: 200% 200%;
             border-color: rgba(255, 255, 255, 0.1);
         }
+
         body.dark .nav-item-assets:hover {
             background: linear-gradient(135deg, #9a5f0d, #e09e1a, #9a5f0d);
             background-size: 200% 200%;
             animation: gradientShift 2.5s ease infinite;
             box-shadow: 0 6px 22px rgba(243, 156, 18, 0.5), 0 0 0 3px rgba(243, 156, 18, 0.25);
         }
+
         body.dark .nav-item-contact {
             background: linear-gradient(135deg, #145a30, #1a7a40, #145a30);
             background-size: 200% 200%;
             border-color: rgba(255, 255, 255, 0.1);
         }
+
         body.dark .nav-item-contact:hover {
             background: linear-gradient(135deg, #186f3a, #25b85a, #186f3a);
             background-size: 200% 200%;
             animation: gradientShift 2.5s ease infinite;
             box-shadow: 0 6px 22px rgba(39, 174, 96, 0.5), 0 0 0 3px rgba(39, 174, 96, 0.25);
         }
+
         /* ========== AKHIR TOMBOL NAVIGASI ========== */
 
         .dark-mode-toggle {
@@ -974,9 +985,11 @@
             .mobile-sidebar a i.fa-home {
                 color: #5dade2;
             }
+
             .mobile-sidebar a i.fa-cubes {
                 color: #f5b041;
             }
+
             .mobile-sidebar a i.fa-comments {
                 color: #2ecc71;
             }
@@ -1080,7 +1093,8 @@
             style="display:inline-block; margin-top:25px; background:#f39c12; padding:12px 36px; border-radius:40px; color:white; text-decoration:none; font-weight:bold; transition:0.2s;"
             onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
-            onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='translateY(-3px)'">Jelajahi
+            onmousedown="this.style.transform='scale(0.96)'"
+            onmouseup="this.style.transform='translateY(-3px)'">Jelajahi
             Asset</a>
     </section>
 
@@ -1135,63 +1149,735 @@
     <script>
         // ======================= DATA PRODUK LENGKAP (ID 1 sampai 55) =======================
         const assets = [
-            { id: 1, name: "SWING ARM QTT", desc: "Swing ARM QTT THAILAND FIZR", price: 25000, cat: "arm", images: ["arm qtt1.png", "arm qtt2.png"], poly: "1K", fmt: "Dff, Obj", style: "Realistic", type: "premium" },
-            { id: 2, name: "SWING ARM RACE PRO X01", desc: "Arm CNC RACE PRO VARIO 125/150", price: 25000, cat: "arm", images: ["arm race pro1.png", "arm race pro2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 3, name: "SWING ARM SIJIRO", desc: "Swing Arm shijiro coax GL MAX", price: 25000, cat: "arm", images: ["arm sijiro coak1.png", "arm sijiro coak2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 4, name: "SWING ARM NBR", desc: "SWING ARM NBR AEROX NEW/OLD", price: 25000, cat: "arm", images: ["arm nbr1.png", "arm nbr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 5, name: "STABILIZER MATRIS", desc: "Stabilizers Matris NINJA SS/R", price: 25000, cat: "aksesoris", images: ["matris1.png", "matris2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 6, name: "COVER MESIN NINJA XYZ", desc: "Manisan Ninja cover", price: 25000, cat: "aksesoris", images: ["cvr xyz1.png", "cvr xyz2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 7, name: "TUTUP TANGKY TYGA", desc: "Tutup tangki model TYGA Ninja/GL", price: 20000, cat: "aksesoris", images: ["tyga1.png", "tyga2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 8, name: "BORGOL SHOCK DEPAN", desc: "Bracket shock depan Ninja/RX-King", price: 15000, cat: "aksesoris", images: ["borgol sok depan1.png", "borgol sok depan2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 9, name: "KNALPOT PEKAJAMAN KIDAL", desc: "Knalpot knalpot Herx Hoek", price: 25000, cat: "mesin", images: ["pekajaman1.png", "pekajaman2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 10, name: "RADIATOR VINS AEROX", desc: "Radiator Vins Aerox Nmax", price: 20000, cat: "mesin", images: ["rd vins1.png", "rd vins2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 11, name: "RADIATOR VND NINJA", desc: "Radiator VND Ninja/MX King", price: 20000, cat: "mesin", images: ["rd vnd1.png", "rd vnd2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 12, name: "KNALPOT DGR", desc: "Knalpot Beat Karbu Road Race", price: 25000, cat: "mesin", images: ["dgr1.png", "dgr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 13, name: "VND KZR R17", desc: "Velg VND KZR Ring 17 Metik disc kiri", price: 25000, cat: "velg", images: ["vnd kzr1.png", "vnd kzr2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 14, name: "VND SIXSTARS V1", desc: "Velg VND Sixstars Ring 17 Ninja/MX", price: 25000, cat: "velg", images: ["sixstar v1.png", "sixstar v2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 15, name: "JOK NINJA SS", desc: "Jok Ninja Custom Arvi", price: 20000, cat: "jok", images: ["jok arv1.png", "jok arv2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 16, name: "JOK GL CUSTOM", desc: "Jok GL custom parahu fiber", price: 25000, cat: "jok", images: ["jok gl set1.png", "jok gl set2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 17, name: "JOK OZZA SUPRA X", desc: "Jok Ozza Road Race Supra", price: 20000, cat: "jok", images: ["jok ozza1.png", "jok ozza2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 18, name: "JOK MODEL SLIM FIZR", desc: "Jok Fizr slim custom catur", price: 20000, cat: "jok", images: ["jok slim1.png", "jok slim2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 19, name: "DISC MODENAS", desc: "Disc Modenas style KT", price: 20000, cat: "velg", images: ["disc modenas1.png", "disc modenas2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 20, name: "DISC PRC", desc: "Piringan PRC disc kiri 260mm", price: 25000, cat: "velg", images: ["disc prc1.png", "disc prc2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 21, name: "TB CPO", desc: "Throttle Body barel CPO 30mm", price: 25000, cat: "mesin", images: ["tb cpo1.png", "tb cpo2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 22, name: "SHOCK LCM 27", desc: "Bottom shock LCM 27 Vario", price: 25000, cat: "sok", images: ["lcm1.jpg", "lcm2.jpg"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 23, name: "SHOCK 125Z + ADD", desc: "Shock 125Z disc kanan", price: 25000, cat: "sok", images: ["sok 125z 1.png", "sok 125z 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 24, name: "KALIPER FJN", desc: "Kaliper depan kiri FJN", price: 30000, cat: "sok", images: ["fjn1.png", "fjn2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 25, name: "KALIPER 8.1", desc: "Kaliper depan Formula 8.1", price: 30000, cat: "sok", images: ["kaliper 8.1 1.png", "kaliper 8.1 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 26, name: "UNDERBONE RCB MX KING", desc: "Underbone RCB MX King", price: 25000, cat: "aksesoris", images: ["ub rcb mx1.png", "ub rcb mx2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 27, name: "BAN MAXXIS VICTRA R17", desc: "Ban Maxxis Victra ring 17", price: 20000, cat: "ban", images: ["victra1.png", "victra2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 28, name: "BREAKET SELANG GORILA", desc: "Bracket selang gorila clean", price: 15000, cat: "aksesoris", images: ["brkt selang gorila1.png", "brkt selang gorila2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 29, name: "FAIRING HEREX", desc: "Fairing Herex rangka rebah", price: 20000, cat: "aksesoris", images: ["fairing1.png", "fairing2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 30, name: "BREKET HEADLAMP", desc: "Bracket headlamp SJ Project", price: 20000, cat: "aksesoris", images: ["brkt lamp1.png", "brkt lamp2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 31, name: "CVT VARIO BILLET", desc: "CVT Billet Vario style Vietnam", price: 55000, cat: "aksesoris", images: ["cvt vario billet1.png", "cvt vario billet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 32, name: "ARM HYPERTECH", desc: "Swing arm Hypertech Aerox", price: 25000, cat: "arm", images: ["arm hypert1.png", "arm hypert2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 33, name: "MOUNTING VARIO MG", desc: "Mounting panjang Mixiro Vario", price: 25000, cat: "aksesoris", images: ["mounting mg1.png", "mounting mg2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 34, name: "JOK ARVI CATUR", desc: "Jok Mio M3 model catur", price: 20000, cat: "jok", images: ["jok mio1.png", "jok mio2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 35, name: "COVER FILTER VARIO BILLET", desc: "Box filter billet", price: 50000, cat: "aksesoris", images: ["cvr filter bilet1.png", "cvr filter bilet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 36, name: "MASTER REM DEPAN RCB S1", desc: "Master rem tabung Bonamici", price: 25000, cat: "aksesoris", images: ["rcb s1 1.png", "rcb s1 2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 37, name: "SWING ARM DKT THAILAND", desc: "Swing arm DKT Monoshock Exciter", price: 40000, cat: "arm", images: ["dkt tai1.png", "dkt tai2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 38, name: "JOK ARVI VIETNAM", desc: "Jok Vario set fiber Vietnam", price: 40000, cat: "jok", images: ["jok viet1.png", "jok viet2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 39, name: "BAK CVT MIO", desc: "Bak CVT titanium Mio", price: 65000, cat: "aksesoris", images: ["cvt mio1.png", "cvt mio2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
-            { id: 40, name: "RIMS JRP TROMOL BECAK", desc: "rim set tromol becak non metik ring 17", price: 25000, cat: "velg", images: ["jrp rims1.png", "jrp rims2.png"], poly: "1K", fmt: "Dff, OBJ", style: "Stylized", type: "premium" },
+            {
+                id: 1,
+                name: "SWING ARM QTT",
+                desc: "Swing ARM QTT THAILAND FIZR",
+                price: 25000,
+                cat: "arm",
+                images: ["arm qtt1.png", "arm qtt2.png"],
+                poly: "1K",
+                fmt: "Dff, Obj",
+                style: "Realistic",
+                type: "premium"
+            },
+            {
+                id: 2,
+                name: "SWING ARM RACE PRO X01",
+                desc: "Arm CNC RACE PRO VARIO 125/150",
+                price: 25000,
+                cat: "arm",
+                images: ["arm race pro1.png", "arm race pro2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 3,
+                name: "SWING ARM SIJIRO",
+                desc: "Swing Arm shijiro coax GL MAX",
+                price: 25000,
+                cat: "arm",
+                images: ["arm sijiro coak1.png", "arm sijiro coak2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 4,
+                name: "SWING ARM NBR",
+                desc: "SWING ARM NBR AEROX NEW/OLD",
+                price: 25000,
+                cat: "arm",
+                images: ["arm nbr1.png", "arm nbr2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 5,
+                name: "STABILIZER MATRIS",
+                desc: "Stabilizers Matris NINJA SS/R",
+                price: 25000,
+                cat: "aksesoris",
+                images: ["matris1.png", "matris2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 6,
+                name: "COVER MESIN NINJA XYZ",
+                desc: "Manisan Ninja cover",
+                price: 25000,
+                cat: "aksesoris",
+                images: ["cvr xyz1.png", "cvr xyz2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 7,
+                name: "TUTUP TANGKY TYGA",
+                desc: "Tutup tangki model TYGA Ninja/GL",
+                price: 20000,
+                cat: "aksesoris",
+                images: ["tyga1.png", "tyga2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 8,
+                name: "BORGOL SHOCK DEPAN",
+                desc: "Bracket shock depan Ninja/RX-King",
+                price: 15000,
+                cat: "aksesoris",
+                images: ["borgol sok depan1.png", "borgol sok depan2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 9,
+                name: "KNALPOT PEKAJAMAN KIDAL",
+                desc: "Knalpot knalpot Herx Hoek",
+                price: 25000,
+                cat: "mesin",
+                images: ["pekajaman1.png", "pekajaman2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 10,
+                name: "RADIATOR VINS AEROX",
+                desc: "Radiator Vins Aerox Nmax",
+                price: 20000,
+                cat: "mesin",
+                images: ["rd vins1.png", "rd vins2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 11,
+                name: "RADIATOR VND NINJA",
+                desc: "Radiator VND Ninja/MX King",
+                price: 20000,
+                cat: "mesin",
+                images: ["rd vnd1.png", "rd vnd2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 12,
+                name: "KNALPOT DGR",
+                desc: "Knalpot Beat Karbu Road Race",
+                price: 25000,
+                cat: "mesin",
+                images: ["dgr1.png", "dgr2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 13,
+                name: "VND KZR R17",
+                desc: "Velg VND KZR Ring 17 Metik disc kiri",
+                price: 25000,
+                cat: "velg",
+                images: ["vnd kzr1.png", "vnd kzr2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 14,
+                name: "VND SIXSTARS V1",
+                desc: "Velg VND Sixstars Ring 17 Ninja/MX",
+                price: 25000,
+                cat: "velg",
+                images: ["sixstar v1.png", "sixstar v2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 15,
+                name: "JOK NINJA SS",
+                desc: "Jok Ninja Custom Arvi",
+                price: 20000,
+                cat: "jok",
+                images: ["jok arv1.png", "jok arv2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 16,
+                name: "JOK GL CUSTOM",
+                desc: "Jok GL custom parahu fiber",
+                price: 25000,
+                cat: "jok",
+                images: ["jok gl set1.png", "jok gl set2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 17,
+                name: "JOK OZZA SUPRA X",
+                desc: "Jok Ozza Road Race Supra",
+                price: 20000,
+                cat: "jok",
+                images: ["jok ozza1.png", "jok ozza2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 18,
+                name: "JOK MODEL SLIM FIZR",
+                desc: "Jok Fizr slim custom catur",
+                price: 20000,
+                cat: "jok",
+                images: ["jok slim1.png", "jok slim2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 19,
+                name: "DISC MODENAS",
+                desc: "Disc Modenas style KT",
+                price: 20000,
+                cat: "velg",
+                images: ["disc modenas1.png", "disc modenas2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 20,
+                name: "DISC PRC",
+                desc: "Piringan PRC disc kiri 260mm",
+                price: 25000,
+                cat: "velg",
+                images: ["disc prc1.png", "disc prc2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 21,
+                name: "TB CPO",
+                desc: "Throttle Body barel CPO 30mm",
+                price: 25000,
+                cat: "mesin",
+                images: ["tb cpo1.png", "tb cpo2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 22,
+                name: "SHOCK LCM 27",
+                desc: "Bottom shock LCM 27 Vario",
+                price: 25000,
+                cat: "sok",
+                images: ["lcm1.jpg", "lcm2.jpg"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 23,
+                name: "SHOCK 125Z + ADD",
+                desc: "Shock 125Z disc kanan",
+                price: 25000,
+                cat: "sok",
+                images: ["sok 125z 1.png", "sok 125z 2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 24,
+                name: "KALIPER FJN",
+                desc: "Kaliper depan kiri FJN",
+                price: 30000,
+                cat: "sok",
+                images: ["fjn1.png", "fjn2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 25,
+                name: "KALIPER 8.1",
+                desc: "Kaliper depan Formula 8.1",
+                price: 30000,
+                cat: "sok",
+                images: ["kaliper 8.1 1.png", "kaliper 8.1 2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 26,
+                name: "UNDERBONE RCB MX KING",
+                desc: "Underbone RCB MX King",
+                price: 25000,
+                cat: "aksesoris",
+                images: ["ub rcb mx1.png", "ub rcb mx2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 27,
+                name: "BAN MAXXIS VICTRA R17",
+                desc: "Ban Maxxis Victra ring 17",
+                price: 20000,
+                cat: "ban",
+                images: ["victra1.png", "victra2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 28,
+                name: "BREAKET SELANG GORILA",
+                desc: "Bracket selang gorila clean",
+                price: 15000,
+                cat: "aksesoris",
+                images: ["brkt selang gorila1.png", "brkt selang gorila2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 29,
+                name: "FAIRING HEREX",
+                desc: "Fairing Herex rangka rebah",
+                price: 20000,
+                cat: "aksesoris",
+                images: ["fairing1.png", "fairing2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 30,
+                name: "BREKET HEADLAMP",
+                desc: "Bracket headlamp SJ Project",
+                price: 20000,
+                cat: "aksesoris",
+                images: ["brkt lamp1.png", "brkt lamp2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 31,
+                name: "CVT VARIO BILLET",
+                desc: "CVT Billet Vario style Vietnam",
+                price: 55000,
+                cat: "aksesoris",
+                images: ["cvt vario billet1.png", "cvt vario billet2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 32,
+                name: "ARM HYPERTECH",
+                desc: "Swing arm Hypertech Aerox",
+                price: 25000,
+                cat: "arm",
+                images: ["arm hypert1.png", "arm hypert2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 33,
+                name: "MOUNTING VARIO MG",
+                desc: "Mounting panjang Mixiro Vario",
+                price: 25000,
+                cat: "aksesoris",
+                images: ["mounting mg1.png", "mounting mg2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 34,
+                name: "JOK ARVI CATUR",
+                desc: "Jok Mio M3 model catur",
+                price: 20000,
+                cat: "jok",
+                images: ["jok mio1.png", "jok mio2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 35,
+                name: "COVER FILTER VARIO BILLET",
+                desc: "Box filter billet",
+                price: 50000,
+                cat: "aksesoris",
+                images: ["cvr filter bilet1.png", "cvr filter bilet2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 36,
+                name: "MASTER REM DEPAN RCB S1",
+                desc: "Master rem tabung Bonamici",
+                price: 25000,
+                cat: "aksesoris",
+                images: ["rcb s1 1.png", "rcb s1 2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 37,
+                name: "SWING ARM DKT THAILAND",
+                desc: "Swing arm DKT Monoshock Exciter",
+                price: 40000,
+                cat: "arm",
+                images: ["dkt tai1.png", "dkt tai2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 38,
+                name: "JOK ARVI VIETNAM",
+                desc: "Jok Vario set fiber Vietnam",
+                price: 40000,
+                cat: "jok",
+                images: ["jok viet1.png", "jok viet2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 39,
+                name: "BAK CVT MIO",
+                desc: "Bak CVT titanium Mio",
+                price: 65000,
+                cat: "aksesoris",
+                images: ["cvt mio1.png", "cvt mio2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
+            {
+                id: 40,
+                name: "RIMS JRP TROMOL BECAK",
+                desc: "rim set tromol becak non metik ring 17",
+                price: 25000,
+                cat: "velg",
+                images: ["jrp rims1.png", "jrp rims2.png"],
+                poly: "1K",
+                fmt: "Dff, OBJ",
+                style: "Stylized",
+                type: "premium"
+            },
             // PRODUK FREE
-            { id: 41, name: "VELG VND SET BAN", desc: "VELG VND NEW SPEED R17 FOR MX KING DAN SEJENISNYA", price: 0, cat: "velg", images: ["velg vnd free1.png", "velg vnd free2.png"], poly: "800", fmt: "OBJ", style: "Sport", type: "free", downloadLink: "https://sfl.gl/zRU4" },
-            { id: 42, name: "FRAME PLAT HTS", desc: "HAHA HTS KASIAN WKWK", price: 0, cat: "aksesoris", images: ["plat1.png", "plat2.png"], poly: "800", fmt: "OBJ", style: "soft", type: "free", downloadLink: "https://sfl.gl/UkDj2DN" },
-            { id: 43, name: "KALIPER GROZA", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["kaliper groza free1.png", "kaliper groza free2.png"], poly: "800", fmt: "OBJ", style: "soft", type: "free", downloadLink: "https://sfl.gl/hO9Pp" },
-            { id: 44, name: "VELG VND BINTANG LAUT", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "velg", images: ["vnd bintang laut free1.jpg", "vnd bintang laut free1.jpg"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/V6a6x0" },
-            { id: 45, name: "BAK CVT DT10", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["cvt dt10 1.png", "cvt dt10 2.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/kYn6tfU" },
-            { id: 46, name: "SHOCK BUBUT TAILAND", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["shock bubut1.png", "shock bubut1.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/G0uq" },
-            { id: 47, name: "CVT AIRBLADE", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["cvt airblade.png", "cvt airblade2.png"], poly: "800", fmt: "OBJ", style: "recing", type: "free", downloadLink: "https://sfl.gl/vdni" },
-            { id: 48, name: "FOOTSTEP SKUPI", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["step skupi.png", "step skupi2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/HFw0v" },
-            { id: 49, name: "DISC GALFER", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "velg", images: ["disc galver1.png", "disc galver2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/b3KRv" },
-            { id: 50, name: "BAN KINGLAND VELLOX CTX", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "ban", images: ["ban drag1.png", "ban drag2.png"], poly: "800", fmt: "OBJ", style: "resing abieezz", type: "free", downloadLink: "https://sfl.gl/JojuTd" },
-            { id: 51, name: "SHOCK GROZA", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["shock groza1.png", "shock groza2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/2h82uwWl" },
-            { id: 52, name: "TUTUP OLI CNC", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["tutup oli cnc1.png", "tutup oli cnc2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/3w0W67Yu" },
-            { id: 53, name: "SWING ARM SHIJIRO EXTREME", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "aksesoris", images: ["arm sijiro extreme1.png", "arm sijiro extreme2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/2HDGf" },
-            { id: 54, name: "BAN MP76 R17", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "ban", images: ["ban mp76 1.png", "ban mp76 2.png"], poly: "800", fmt: "OBJ", style: "resing", type: "free", downloadLink: "https://sfl.gl/6yIijD" },
-            { id: 55, name: "SHOCK OHLINS", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["sok ohlins1.png", "sok ohlins2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/vMB2z" },
-            { id: 56, name: "SHOCK OHLINS", desc: "PNP SENDIRI YA JANGAN MANJA", price: 0, cat: "sok", images: ["sok ohlins1.png", "sok ohlins2.png"], poly: "800", fmt: "OBJ", style: "proper", type: "free", downloadLink: "https://sfl.gl/vMB2z" }
+            {
+                id: 41,
+                name: "VELG VND SET BAN",
+                desc: "VELG VND NEW SPEED R17 FOR MX KING DAN SEJENISNYA",
+                price: 0,
+                cat: "velg",
+                images: ["velg vnd free1.png", "velg vnd free2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "Sport",
+                type: "free",
+                downloadLink: "https://sfl.gl/zRU4"
+            },
+            {
+                id: 42,
+                name: "FRAME PLAT HTS",
+                desc: "HAHA HTS KASIAN WKWK",
+                price: 0,
+                cat: "aksesoris",
+                images: ["plat1.png", "plat2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "soft",
+                type: "free",
+                downloadLink: "https://sfl.gl/UkDj2DN"
+            },
+            {
+                id: 43,
+                name: "KALIPER GROZA",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "sok",
+                images: ["kaliper groza free1.png", "kaliper groza free2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "soft",
+                type: "free",
+                downloadLink: "https://sfl.gl/hO9Pp"
+            },
+            {
+                id: 44,
+                name: "VELG VND BINTANG LAUT",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "velg",
+                images: ["bintanglaut1.png", "bintanglaut2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/V6a6x0"
+            },
+            {
+                id: 45,
+                name: "BAK CVT DT10",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["cvt dt10 1.png", "cvt dt10 2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "recing",
+                type: "free",
+                downloadLink: "https://sfl.gl/kYn6tfU"
+            },
+            {
+                id: 46,
+                name: "SHOCK BUBUT THAILAND",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "sok",
+                images: ["sokbubut1.png", "sokbubut2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "recing",
+                type: "free",
+                downloadLink: "https://sfl.gl/G0uq"
+            },
+            {
+                id: 47,
+                name: "CVT AIRBLADE",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["cvt airblade.png", "cvt airblade2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "recing",
+                type: "free",
+                downloadLink: "https://sfl.gl/vdni"
+            },
+            {
+                id: 48,
+                name: "FOOTSTEP SKUPI",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["step skupi.png", "step skupi2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/HFw0v"
+            },
+            {
+                id: 49,
+                name: "DISC GALFER",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "velg",
+                images: ["disc galver1.png", "disc galver2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/b3KRv"
+            },
+            {
+                id: 50,
+                name: "BAN KINGLAND VELLOX CTX",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "ban",
+                images: ["ban drag1.png", "ban drag2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "resing abieezz",
+                type: "free",
+                downloadLink: "https://sfl.gl/JojuTd"
+            },
+            {
+                id: 51,
+                name: "SHOCK GROZA",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "sok",
+                images: ["shock groza1.png", "shock groza2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/2h82uwWl"
+            },
+            {
+                id: 52,
+                name: "TUTUP OLI CNC",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["tutup oli cnc1.png", "tutup oli cnc2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/3w0W67Yu"
+            },
+            {
+                id: 53,
+                name: "SWING ARM SHIJIRO EXTREME",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["arm sijiro extreme1.png", "arm sijiro extreme2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/2HDGf"
+            },
+            {
+                id: 54,
+                name: "BAN MP76 R17",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "ban",
+                images: ["ban mp76 1.png", "ban mp76 2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "resing",
+                type: "free",
+                downloadLink: "https://sfl.gl/6yIijD"
+            },
+            {
+                id: 55,
+                name: "SHOCK OHLINS",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "sok",
+                images: ["sok ohlins1.png", "sok ohlins2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/vMB2z"
+            },
+            {
+                id: 56,
+                name: "VELG CMG XMODE",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "velg",
+                images: ["cmgxmode1.png", "cmgxmode2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/WuyJ9o"
+            },
+            {
+                id: 57,
+                name: "HUGGER PENDEK",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "aksesoris",
+                images: ["hugger1.png", "hugger2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/lfPQj"
+            },
+            {
+                id: 58,
+                name: "KNALPOT PEKAJAMAN TITANIUM",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "mesin",
+                images: ["pekajamanjupe1.png", "pekajamanjupe2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/E1TOHTQ"
+            },
+            {
+                id: 59,
+                name: "RADIATOR GSX PNP VARIO",
+                desc: "PNP SENDIRI YA JANGAN MANJA",
+                price: 0,
+                cat: "mesin",
+                images: ["rdgsx1.png", "rdgsx2.png"],
+                poly: "800",
+                fmt: "OBJ",
+                style: "proper",
+                type: "free",
+                downloadLink: "https://sfl.gl/M1n7Mpsn"
+            },
+
         ];
 
         // ========== LOGIKA AWAL: BELUM ADA FILTER HARGA ==========
@@ -1452,7 +2138,7 @@
                 document.querySelectorAll("#categoryFilters .filter-btn").forEach(b => b.classList.remove(
                     "active"));
                 document.querySelector("#categoryFilters .filter-btn[data-filter='all']").classList.add(
-                "active");
+                    "active");
                 renderAssets();
             });
         });
@@ -1460,8 +2146,10 @@
         window.shareProduct = (id) => {
             let url = window.location.href.split("?")[0] + `?product=${id}`;
             if (navigator.share) navigator.share({ title: "PGH 3D Asset", text: "Lihat asset ini", url });
-            else { navigator.clipboard.writeText(url);
-                showNotif("Link produk disalin! ✅"); }
+            else {
+                navigator.clipboard.writeText(url);
+                showNotif("Link produk disalin! ✅");
+            }
         };
 
         window.addEventListener("load", () => {
@@ -1469,12 +2157,16 @@
             renderCart();
             renderAssets();
             const param = new URLSearchParams(location.search).get("product");
-            if (param) setTimeout(() => { let el = document.getElementById("product-" + param); if (el) { el
+            if (param) setTimeout(() => {
+                let el = document.getElementById("product-" + param); if (el) {
+                    el
                         .scrollIntoView({ behavior: "smooth" });
-                    el.classList.add("highlight-product"); } }, 400);
+                    el.classList.add("highlight-product");
+                }
+            }, 400);
         });
 
-        window.toggleMobileMenu = function() {
+        window.toggleMobileMenu = function () {
             document.getElementById("mobileSidebar").classList.toggle("show");
             document.getElementById("sidebarOverlay").classList.toggle("show");
             let icon = document.getElementById("menuIcon");
@@ -1483,7 +2175,7 @@
             else icon.classList.replace("fa-times", "fa-bars");
         };
 
-        window.closeMobileMenu = function() {
+        window.closeMobileMenu = function () {
             document.getElementById("mobileSidebar").classList.remove("show");
             document.getElementById("sidebarOverlay").classList.remove("show");
             document.getElementById("menuIcon").classList.replace("fa-times", "fa-bars");
