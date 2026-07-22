@@ -1,0 +1,21 @@
+PGH 3D STORE
+==============================
+
+Urutan paling mudah:
+
+1. Jangan langsung upload ke GitHub.
+2. Buka folder "supabase".
+3. Jalankan 01-schema.sql pada Supabase SQL Editor.
+4. Jalankan 02-seed-products.sql pada Supabase SQL Editor.
+5. Buat akun pada Authentication > Users.
+6. Buka 03-add-admin.sql, ganti EMAIL_ADMIN_BOS, lalu jalankan.
+7. Jalankan 04-check-installation.sql.
+8. Pastikan hasilnya 75 produk, 47 premium, 28 gratis, dan 1 admin.
+9. Coba website menggunakan Live Server di VS Code.
+10. Login dashboard melalui alamat /admin/.
+11. Jika semuanya benar, jalankan git add, git commit, dan git push.
+
+Panduan lengkap tersedia pada README.md.
+
+PENTING:
+Jangan masukkan Secret Key, service_role, atau password database ke folder website.

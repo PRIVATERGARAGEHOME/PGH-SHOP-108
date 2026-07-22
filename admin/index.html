@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin PGH 3D Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <main class="login-page" id="loginPage">
+        <form class="login-card" id="loginForm">
+            <div class="brand-icon"><i class="fas fa-cubes"></i></div>
+            <p class="eyebrow">PGH 3D STORE</p>
+            <h1>Dashboard Admin</h1>
+            <p class="muted">Masuk menggunakan akun admin Supabase.</p>
+
+            <label for="loginEmail">Email admin</label>
+            <input id="loginEmail" name="email" type="email" autocomplete="username" required>
+
+            <label for="loginPassword">Password</label>
+            <div class="password-field">
+                <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+                <button type="button" id="togglePassword" aria-label="Tampilkan password"><i class="fas fa-eye"></i></button>
+            </div>
+
+            <p class="form-error" id="loginError"></p>
+            <button class="primary full" id="loginButton" type="submit"><i class="fas fa-right-to-bracket"></i> Masuk</button>
+            <a class="back-link" href="../"><i class="fas fa-arrow-left"></i> Kembali ke toko</a>
+        </form>
+    </main>
+
+    <div class="dashboard" id="dashboard" hidden>
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">PGH 3D STORE</p>
+                <h1>Dashboard Produk</h1>
+            </div>
+            <div class="topbar-actions">
+                <a class="secondary" href="../" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Lihat Website</a>
+                <button class="danger-ghost" id="logoutButton" type="button"><i class="fas fa-right-from-bracket"></i> Keluar</button>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <section class="stats" aria-label="Ringkasan produk">
+                <article><span>Total Produk</span><strong id="totalProducts">0</strong></article>
+                <article><span>Premium</span><strong id="premiumProducts">0</strong></article>
+                <article><span>Gratis</span><strong id="freeProducts">0</strong></article>
+                <article><span>Draft</span><strong id="draftProducts">0</strong></article>
+            </section>
+
+            <section class="panel editor-panel" id="editorPanel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">EDITOR PRODUK</p>
+                        <h2 id="formTitle">Tambah Produk Baru</h2>
+                    </div>
+                    <button class="secondary" id="resetFormButton" type="button"><i class="fas fa-plus"></i> Produk Baru</button>
+                </div>
+
+                <form id="productForm">
+                    <input id="productId" type="hidden">
+                    <div class="form-grid">
+                        <div class="field span-2">
+                            <label for="productName">Nama produk *</label>
+                            <input id="productName" type="text" maxlength="120" required>
+                        </div>
+                        <div class="field">
+                            <label for="productType">Jenis *</label>
+                            <select id="productType" required>
+                                <option value="premium">Premium</option>
+                                <option value="free">Gratis</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="productPrice">Harga rupiah *</label>
+                            <input id="productPrice" type="number" min="0" step="1000" value="15000" required>
+                        </div>
+                        <div class="field">
+                            <label for="productCategory">Kategori *</label>
+                            <select id="productCategory" required>
+                                <option value="arm">Swing Arm</option>
+                                <option value="aksesoris">Aksesoris</option>
+                                <option value="mesin">Mesin/Knalpot</option>
+                                <option value="velg">Velg/Disc</option>
+                                <option value="jok">Jok</option>
+                                <option value="sok">Shock/Kaliper</option>
+                                <option value="ban">Ban</option>
+                                <option value="strip">Striping</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="productOrder">Urutan tampilan</label>
+                            <input id="productOrder" type="number" min="0" value="0">
+                        </div>
+                        <div class="field span-2">
+                            <label for="productDescription">Deskripsi</label>
+                            <textarea id="productDescription" rows="3" maxlength="800"></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="productPoly">Poly</label>
+                            <input id="productPoly" type="text" maxlength="40" placeholder="Contoh: 1K">
+                        </div>
+                        <div class="field">
+                            <label for="productFormat">Format file</label>
+                            <input id="productFormat" type="text" maxlength="80" placeholder="Contoh: DFF, OBJ">
+                        </div>
+                        <div class="field">
+                            <label for="productStyle">Style</label>
+                            <input id="productStyle" type="text" maxlength="80" placeholder="Contoh: Stylized">
+                        </div>
+                        <div class="field">
+                            <label for="downloadUrl">Link download produk gratis</label>
+                            <input id="downloadUrl" type="url" placeholder="https://...">
+                        </div>
+                        <div class="field span-2">
+                            <label for="productImages">Tambah gambar</label>
+                            <input id="productImages" type="file" accept="image/png,image/jpeg,image/webp" multiple>
+                            <small>Maksimal 5 MB per gambar setelah dioptimalkan. PNG, JPG, atau WebP.</small>
+                        </div>
+                        <div class="field span-2">
+                            <label>Gambar saat ini</label>
+                            <div class="image-list" id="existingImages"><p class="muted">Belum ada gambar.</p></div>
+                        </div>
+                        <label class="switch-row span-2">
+                            <input id="isPublished" type="checkbox" checked>
+                            <span>Tampilkan produk pada website publik</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="primary" id="saveProductButton" type="submit"><i class="fas fa-floppy-disk"></i> Simpan Produk</button>
+                        <button class="secondary" id="cancelEditButton" type="button" hidden>Batal Edit</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading list-heading">
+                    <div>
+                        <p class="eyebrow">DAFTAR PRODUK</p>
+                        <h2>Kelola Produk</h2>
+                    </div>
+                    <input id="adminSearch" type="search" placeholder="Cari produk...">
+                </div>
+                <div class="product-list" id="productList"><p class="loading">Memuat produk...</p></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../vendor/supabase.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+

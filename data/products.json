@@ -1,0 +1,1427 @@
+[
+  {
+    "source_key": "original-001",
+    "legacy_id": 1,
+    "name": "SWING ARM QTT",
+    "description": "Swing ARM QTT THAILAND FIZR",
+    "price": 25000,
+    "category": "arm",
+    "images": [
+      "images/arm-qtt1.webp",
+      "images/arm-qtt2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, Obj",
+    "style": "Realistic",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 1
+  },
+  {
+    "source_key": "original-002",
+    "legacy_id": 2,
+    "name": "SWING ARM RACE PRO X01",
+    "description": "Arm CNC RACE PRO VARIO 125/150",
+    "price": 25000,
+    "category": "arm",
+    "images": [
+      "images/arm-race-pro1.webp",
+      "images/arm-race-pro2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 2
+  },
+  {
+    "source_key": "original-003",
+    "legacy_id": 3,
+    "name": "SWING ARM SIJIRO",
+    "description": "Swing Arm shijiro coax GL MAX",
+    "price": 25000,
+    "category": "arm",
+    "images": [
+      "images/arm-sijiro-coak1.webp",
+      "images/arm-sijiro-coak2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 3
+  },
+  {
+    "source_key": "original-004",
+    "legacy_id": 4,
+    "name": "SWING ARM NBR",
+    "description": "SWING ARM NBR AEROX NEW/OLD",
+    "price": 25000,
+    "category": "arm",
+    "images": [
+      "images/arm-nbr1.webp",
+      "images/arm-nbr2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 4
+  },
+  {
+    "source_key": "original-005",
+    "legacy_id": 5,
+    "name": "STABILIZER MATRIS",
+    "description": "Stabilizers Matris NINJA SS/R",
+    "price": 25000,
+    "category": "aksesoris",
+    "images": [
+      "images/matris1.webp",
+      "images/matris2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 5
+  },
+  {
+    "source_key": "original-006",
+    "legacy_id": 6,
+    "name": "COVER MESIN NINJA XYZ",
+    "description": "Manisan Ninja cover",
+    "price": 25000,
+    "category": "aksesoris",
+    "images": [
+      "images/cvr-xyz1.webp",
+      "images/cvr-xyz2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 6
+  },
+  {
+    "source_key": "original-007",
+    "legacy_id": 7,
+    "name": "TUTUP TANGKY TYGA",
+    "description": "Tutup tangki model TYGA Ninja/GL",
+    "price": 20000,
+    "category": "aksesoris",
+    "images": [
+      "images/tyga1.webp",
+      "images/tyga2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 7
+  },
+  {
+    "source_key": "original-008",
+    "legacy_id": 8,
+    "name": "BORGOL SHOCK DEPAN",
+    "description": "Bracket shock depan Ninja/RX-King",
+    "price": 15000,
+    "category": "aksesoris",
+    "images": [
+      "images/borgol-sok-depan1.webp",
+      "images/borgol-sok-depan2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 8
+  },
+  {
+    "source_key": "original-009",
+    "legacy_id": 9,
+    "name": "KNALPOT PEKAJAMAN KIDAL",
+    "description": "Knalpot knalpot Herx Hoek",
+    "price": 25000,
+    "category": "mesin",
+    "images": [
+      "images/pekajaman1.webp",
+      "images/pekajaman2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 9
+  },
+  {
+    "source_key": "original-010",
+    "legacy_id": 10,
+    "name": "RADIATOR VINS AEROX",
+    "description": "Radiator Vins Aerox Nmax",
+    "price": 20000,
+    "category": "mesin",
+    "images": [
+      "images/rd-vins1.webp",
+      "images/rd-vins2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 10
+  },
+  {
+    "source_key": "original-011",
+    "legacy_id": 11,
+    "name": "RADIATOR VND NINJA",
+    "description": "Radiator VND Ninja/MX King",
+    "price": 20000,
+    "category": "mesin",
+    "images": [
+      "images/rd-vnd1.webp",
+      "images/rd-vnd2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 11
+  },
+  {
+    "source_key": "original-012",
+    "legacy_id": 12,
+    "name": "KNALPOT DGR",
+    "description": "Knalpot Beat Karbu Road Race",
+    "price": 25000,
+    "category": "mesin",
+    "images": [
+      "images/dgr1.webp",
+      "images/dgr2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 12
+  },
+  {
+    "source_key": "original-013",
+    "legacy_id": 13,
+    "name": "VND KZR R17",
+    "description": "Velg VND KZR Ring 17 Metik disc kiri",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/vnd-kzr1.webp",
+      "images/vnd-kzr2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 13
+  },
+  {
+    "source_key": "original-014",
+    "legacy_id": 14,
+    "name": "VND SIXSTARS V1",
+    "description": "Velg VND Sixstars Ring 17 Ninja/MX",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/sixstar-v1.webp",
+      "images/sixstar-v2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 14
+  },
+  {
+    "source_key": "original-015",
+    "legacy_id": 15,
+    "name": "JOK NINJA SS",
+    "description": "Jok Ninja Custom Arvi",
+    "price": 20000,
+    "category": "jok",
+    "images": [
+      "images/jok-arv1.webp",
+      "images/jok-arv2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 15
+  },
+  {
+    "source_key": "original-016",
+    "legacy_id": 16,
+    "name": "JOK GL CUSTOM",
+    "description": "Jok GL custom parahu fiber",
+    "price": 25000,
+    "category": "jok",
+    "images": [
+      "images/jok-gl-set1.webp",
+      "images/jok-gl-set2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 16
+  },
+  {
+    "source_key": "original-017",
+    "legacy_id": 17,
+    "name": "JOK OZZA SUPRA X",
+    "description": "Jok Ozza Road Race Supra",
+    "price": 20000,
+    "category": "jok",
+    "images": [
+      "images/jok-ozza1.webp",
+      "images/jok-ozza2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 17
+  },
+  {
+    "source_key": "original-018",
+    "legacy_id": 18,
+    "name": "JOK MODEL SLIM FIZR",
+    "description": "Jok Fizr slim custom catur",
+    "price": 20000,
+    "category": "jok",
+    "images": [
+      "images/jok-slim1.webp",
+      "images/jok-slim2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 18
+  },
+  {
+    "source_key": "original-019",
+    "legacy_id": 19,
+    "name": "DISC MODENAS",
+    "description": "Disc Modenas style KT",
+    "price": 20000,
+    "category": "velg",
+    "images": [
+      "images/disc-modenas1.webp",
+      "images/disc-modenas2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 19
+  },
+  {
+    "source_key": "original-020",
+    "legacy_id": 20,
+    "name": "DISC PRC",
+    "description": "Piringan PRC disc kiri 260mm",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/disc-prc1.webp",
+      "images/disc-prc2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 20
+  },
+  {
+    "source_key": "original-021",
+    "legacy_id": 21,
+    "name": "TB CPO",
+    "description": "Throttle Body barel CPO 30mm",
+    "price": 25000,
+    "category": "mesin",
+    "images": [
+      "images/tb-cpo1.webp",
+      "images/tb-cpo2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 21
+  },
+  {
+    "source_key": "original-022",
+    "legacy_id": 22,
+    "name": "SHOCK LCM 27",
+    "description": "Bottom shock LCM 27 Vario",
+    "price": 25000,
+    "category": "sok",
+    "images": [
+      "images/lcm1.webp",
+      "images/lcm2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 22
+  },
+  {
+    "source_key": "original-023",
+    "legacy_id": 23,
+    "name": "SHOCK 125Z + ADD",
+    "description": "Shock 125Z disc kanan",
+    "price": 25000,
+    "category": "sok",
+    "images": [
+      "images/sok-125z-1.webp",
+      "images/sok-125z-2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 23
+  },
+  {
+    "source_key": "original-024",
+    "legacy_id": 24,
+    "name": "KALIPER FJN",
+    "description": "Kaliper depan kiri FJN",
+    "price": 30000,
+    "category": "sok",
+    "images": [
+      "images/fjn1.webp",
+      "images/fjn2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 24
+  },
+  {
+    "source_key": "original-025",
+    "legacy_id": 25,
+    "name": "KALIPER 8.1",
+    "description": "Kaliper depan Formula 8.1",
+    "price": 30000,
+    "category": "sok",
+    "images": [
+      "images/kaliper-8-1-1.webp",
+      "images/kaliper-8-1-2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 25
+  },
+  {
+    "source_key": "original-026",
+    "legacy_id": 26,
+    "name": "UNDERBONE RCB MX KING",
+    "description": "Underbone RCB MX King",
+    "price": 25000,
+    "category": "aksesoris",
+    "images": [
+      "images/ub-rcb-mx1.webp",
+      "images/ub-rcb-mx2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 26
+  },
+  {
+    "source_key": "original-027",
+    "legacy_id": 27,
+    "name": "BAN MAXXIS VICTRA R17",
+    "description": "Ban Maxxis Victra ring 17",
+    "price": 20000,
+    "category": "ban",
+    "images": [
+      "images/victra1.webp",
+      "images/victra2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 27
+  },
+  {
+    "source_key": "original-028",
+    "legacy_id": 28,
+    "name": "BREAKET SELANG GORILA",
+    "description": "Bracket selang gorila clean",
+    "price": 15000,
+    "category": "aksesoris",
+    "images": [
+      "images/brkt-selang-gorila1.webp",
+      "images/brkt-selang-gorila2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 28
+  },
+  {
+    "source_key": "original-029",
+    "legacy_id": 29,
+    "name": "FAIRING HEREX",
+    "description": "Fairing Herex rangka rebah",
+    "price": 20000,
+    "category": "aksesoris",
+    "images": [
+      "images/fairing1.webp",
+      "images/fairing2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 29
+  },
+  {
+    "source_key": "original-030",
+    "legacy_id": 30,
+    "name": "BREKET HEADLAMP",
+    "description": "Bracket headlamp SJ Project",
+    "price": 20000,
+    "category": "aksesoris",
+    "images": [
+      "images/brkt-lamp1.webp",
+      "images/brkt-lamp2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 30
+  },
+  {
+    "source_key": "original-031",
+    "legacy_id": 31,
+    "name": "CVT VARIO BILLET",
+    "description": "CVT Billet Vario style Vietnam",
+    "price": 55000,
+    "category": "aksesoris",
+    "images": [
+      "images/cvt-vario-billet1.webp",
+      "images/cvt-vario-billet2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 31
+  },
+  {
+    "source_key": "original-032",
+    "legacy_id": 32,
+    "name": "ARM HYPERTECH",
+    "description": "Swing arm Hypertech Aerox",
+    "price": 25000,
+    "category": "arm",
+    "images": [
+      "images/arm-hypert1.webp",
+      "images/arm-hypert2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 32
+  },
+  {
+    "source_key": "original-033",
+    "legacy_id": 33,
+    "name": "MOUNTING VARIO MG",
+    "description": "Mounting panjang Mixiro Vario",
+    "price": 25000,
+    "category": "aksesoris",
+    "images": [
+      "images/mounting-mg1.webp",
+      "images/mounting-mg2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 33
+  },
+  {
+    "source_key": "original-034",
+    "legacy_id": 34,
+    "name": "JOK ARVI CATUR",
+    "description": "Jok Mio M3 model catur",
+    "price": 20000,
+    "category": "jok",
+    "images": [
+      "images/jok-mio1.webp",
+      "images/jok-mio2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 34
+  },
+  {
+    "source_key": "original-035",
+    "legacy_id": 35,
+    "name": "COVER FILTER VARIO BILLET",
+    "description": "Box filter billet",
+    "price": 50000,
+    "category": "aksesoris",
+    "images": [
+      "images/cvr-filter-bilet1.webp",
+      "images/cvr-filter-bilet2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 35
+  },
+  {
+    "source_key": "original-036",
+    "legacy_id": 36,
+    "name": "MASTER REM DEPAN RCB S1",
+    "description": "Master rem tabung Bonamici",
+    "price": 25000,
+    "category": "aksesoris",
+    "images": [
+      "images/rcb-s1-1.webp",
+      "images/rcb-s1-2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 36
+  },
+  {
+    "source_key": "original-037",
+    "legacy_id": 37,
+    "name": "SWING ARM DKT THAILAND",
+    "description": "Swing arm DKT Monoshock Exciter",
+    "price": 40000,
+    "category": "arm",
+    "images": [
+      "images/dkt-tai1.webp",
+      "images/dkt-tai2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 37
+  },
+  {
+    "source_key": "original-038",
+    "legacy_id": 38,
+    "name": "JOK ARVI VIETNAM",
+    "description": "Jok Vario set fiber Vietnam",
+    "price": 40000,
+    "category": "jok",
+    "images": [
+      "images/jok-viet1.webp",
+      "images/jok-viet2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 38
+  },
+  {
+    "source_key": "original-039",
+    "legacy_id": 39,
+    "name": "BAK CVT MIO",
+    "description": "Bak CVT titanium Mio",
+    "price": 65000,
+    "category": "aksesoris",
+    "images": [
+      "images/cvt-mio1.webp",
+      "images/cvt-mio2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 39
+  },
+  {
+    "source_key": "original-040",
+    "legacy_id": 40,
+    "name": "RIMS JRP TROMOL BECAK",
+    "description": "rim set tromol becak non metik ring 17",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/jrp-rims1.webp",
+      "images/jrp-rims2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 40
+  },
+  {
+    "source_key": "original-041",
+    "legacy_id": 41,
+    "name": "KNALPOT MIO MEDWICK",
+    "description": "KNALPOT CEKSLIS FOR MIO",
+    "price": 25000,
+    "category": "mesin",
+    "images": [
+      "images/medwik1.webp",
+      "images/medwik2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 41
+  },
+  {
+    "source_key": "original-042",
+    "legacy_id": 42,
+    "name": "SHOCK RT STAGE SET KALIPER",
+    "description": "SHOCK RT STAGE 8 SET KALIPER SWITS",
+    "price": 60000,
+    "category": "sok",
+    "images": [
+      "images/rtstage2.webp",
+      "images/rtstage1.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 42
+  },
+  {
+    "source_key": "original-043",
+    "legacy_id": 43,
+    "name": "SHOCK LCM SET",
+    "description": "SHOCK LCM SET KALIPER DAN PIRINGAN",
+    "price": 60000,
+    "category": "sok",
+    "images": [
+      "images/sok-lcm-set1.webp",
+      "images/sok-lcm-set2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 43
+  },
+  {
+    "source_key": "original-044",
+    "legacy_id": 44,
+    "name": "SHOCK JRP THAILAND",
+    "description": "SHOCK JRP WAVE SET KALIPER",
+    "price": 65000,
+    "category": "sok",
+    "images": [
+      "images/jrp-wave1.webp",
+      "images/jrp-wave2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 44
+  },
+  {
+    "source_key": "original-045",
+    "legacy_id": 45,
+    "name": "BAN ESR",
+    "description": "BAN ESR MALAY RING 17",
+    "price": 15000,
+    "category": "ban",
+    "images": [
+      "images/ban-esr-malay1.webp",
+      "images/ban-esr-malay2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 45
+  },
+  {
+    "source_key": "original-046",
+    "legacy_id": 405,
+    "name": "VELG VND AK55 V2",
+    "description": "VND AK55 V2 RING 17",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/vnd-ak55-v2-1.webp",
+      "images/vnd-ak55-v2-2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 46
+  },
+  {
+    "source_key": "original-047",
+    "legacy_id": 406,
+    "name": "DISC DT10",
+    "description": "DISC BUTA DT10 VIET STYLE",
+    "price": 25000,
+    "category": "velg",
+    "images": [
+      "images/disc-dt10-1.webp",
+      "images/disc-dt10-2.webp"
+    ],
+    "poly_count": "1K",
+    "file_format": "Dff, OBJ",
+    "style": "Stylized",
+    "product_type": "premium",
+    "download_url": null,
+    "is_published": true,
+    "display_order": 47
+  },
+  {
+    "source_key": "original-048",
+    "legacy_id": 45,
+    "name": "VELG VND SET BAN",
+    "description": "VELG VND NEW SPEED R17 FOR MX KING DAN SEJENISNYA",
+    "price": 0,
+    "category": "velg",
+    "images": [
+      "images/velg-vnd-free1.webp",
+      "images/velg-vnd-free2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "Sport",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/zRU4",
+    "is_published": true,
+    "display_order": 48
+  },
+  {
+    "source_key": "original-049",
+    "legacy_id": 46,
+    "name": "FRAME PLAT HTS",
+    "description": "HAHA HTS KASIAN WKWK",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/plat1.webp",
+      "images/plat2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "soft",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/UkDj2DN",
+    "is_published": true,
+    "display_order": 49
+  },
+  {
+    "source_key": "original-050",
+    "legacy_id": 47,
+    "name": "KALIPER GROZA",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "sok",
+    "images": [
+      "images/kaliper-groza-free1.webp",
+      "images/kaliper-groza-free2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "soft",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/hO9Pp",
+    "is_published": true,
+    "display_order": 50
+  },
+  {
+    "source_key": "original-051",
+    "legacy_id": 48,
+    "name": "VELG VND BINTANG LAUT",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "velg",
+    "images": [
+      "images/bintanglaut1.webp",
+      "images/bintanglaut2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/V6a6x0",
+    "is_published": true,
+    "display_order": 51
+  },
+  {
+    "source_key": "original-052",
+    "legacy_id": 49,
+    "name": "BAK CVT DT10",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/cvt-dt10-1.webp",
+      "images/cvt-dt10-2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "recing",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/kYn6tfU",
+    "is_published": true,
+    "display_order": 52
+  },
+  {
+    "source_key": "original-053",
+    "legacy_id": 50,
+    "name": "SHOCK BUBUT THAILAND",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "sok",
+    "images": [
+      "images/sokbubut1.webp",
+      "images/sokbubut2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "recing",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/G0uq",
+    "is_published": true,
+    "display_order": 53
+  },
+  {
+    "source_key": "original-054",
+    "legacy_id": 51,
+    "name": "CVT AIRBLADE",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/cvt-airblade.webp",
+      "images/cvt-airblade2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "recing",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/vdni",
+    "is_published": true,
+    "display_order": 54
+  },
+  {
+    "source_key": "original-055",
+    "legacy_id": 52,
+    "name": "FOOTSTEP SKUPI",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/step-skupi.webp",
+      "images/step-skupi2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/HFw0v",
+    "is_published": true,
+    "display_order": 55
+  },
+  {
+    "source_key": "original-056",
+    "legacy_id": 53,
+    "name": "DISC GALFER",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "velg",
+    "images": [
+      "images/disc-galver1.webp",
+      "images/disc-galver2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/b3KRv",
+    "is_published": true,
+    "display_order": 56
+  },
+  {
+    "source_key": "original-057",
+    "legacy_id": 54,
+    "name": "BAN KINGLAND VELLOX CTX",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "ban",
+    "images": [
+      "images/ban-drag1.webp",
+      "images/ban-drag2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "resing abieezz",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/JojuTd",
+    "is_published": true,
+    "display_order": 57
+  },
+  {
+    "source_key": "original-058",
+    "legacy_id": 55,
+    "name": "SHOCK GROZA",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "sok",
+    "images": [
+      "images/shock-groza1.webp",
+      "images/shock-groza2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/2h82uwWl",
+    "is_published": true,
+    "display_order": 58
+  },
+  {
+    "source_key": "original-059",
+    "legacy_id": 56,
+    "name": "TUTUP OLI CNC",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/tutup-oli-cnc1.webp",
+      "images/tutup-oli-cnc2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/3w0W67Yu",
+    "is_published": true,
+    "display_order": 59
+  },
+  {
+    "source_key": "original-060",
+    "legacy_id": 57,
+    "name": "SWING ARM SHIJIRO EXTREME",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/arm-sijiro-extreme1.webp",
+      "images/arm-sijiro-extreme2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/2HDGf",
+    "is_published": true,
+    "display_order": 60
+  },
+  {
+    "source_key": "original-061",
+    "legacy_id": 58,
+    "name": "BAN MP76 R17",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "ban",
+    "images": [
+      "images/ban-mp76-1.webp",
+      "images/ban-mp76-2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "resing",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/6yIijD",
+    "is_published": true,
+    "display_order": 61
+  },
+  {
+    "source_key": "original-062",
+    "legacy_id": 59,
+    "name": "SHOCK OHLINS",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "sok",
+    "images": [
+      "images/sok-ohlins1.webp",
+      "images/sok-ohlins2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/vMB2z",
+    "is_published": true,
+    "display_order": 62
+  },
+  {
+    "source_key": "original-063",
+    "legacy_id": 60,
+    "name": "VELG CMG XMODE",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "velg",
+    "images": [
+      "images/cmgxmode1.webp",
+      "images/cmgxmode2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/WuyJ9o",
+    "is_published": true,
+    "display_order": 63
+  },
+  {
+    "source_key": "original-064",
+    "legacy_id": 61,
+    "name": "HUGGER PENDEK",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "aksesoris",
+    "images": [
+      "images/hugger1.webp",
+      "images/hugger2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/lfPQj",
+    "is_published": true,
+    "display_order": 64
+  },
+  {
+    "source_key": "original-065",
+    "legacy_id": 62,
+    "name": "KNALPOT PEKAJAMAN TITANIUM",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "mesin",
+    "images": [
+      "images/pekajamanjupe1.webp",
+      "images/pekajamanjupe2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/E1TOHTQ",
+    "is_published": true,
+    "display_order": 65
+  },
+  {
+    "source_key": "original-066",
+    "legacy_id": 63,
+    "name": "RADIATOR GSX PNP VARIO",
+    "description": "PNP SENDIRI YA JANGAN MANJA",
+    "price": 0,
+    "category": "mesin",
+    "images": [
+      "images/rdgsx1.webp",
+      "images/rdgsx2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/M1n7Mpsn",
+    "is_published": true,
+    "display_order": 66
+  },
+  {
+    "source_key": "original-067",
+    "legacy_id": 64,
+    "name": "STRIPING AEROX CUSTOM BLUE",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/aeroks1.webp",
+      "images/aeroks2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/w7X9tKH",
+    "is_published": true,
+    "display_order": 67
+  },
+  {
+    "source_key": "original-068",
+    "legacy_id": 65,
+    "name": "STRIPING AEROX HITAM UNGU",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/aerox-hitam1.webp",
+      "images/aerox-hitam2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/FY2q74",
+    "is_published": true,
+    "display_order": 68
+  },
+  {
+    "source_key": "original-069",
+    "legacy_id": 66,
+    "name": "STRIPING VIETNAM STYLE",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/aerox-merah1.webp",
+      "images/aerox-merah2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/FY2q74",
+    "is_published": true,
+    "display_order": 69
+  },
+  {
+    "source_key": "original-070",
+    "legacy_id": 67,
+    "name": "STRIPING AEROX VIETNAM STYLE",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/aerox-merah1.webp",
+      "images/aerox-merah2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/FY2q74",
+    "is_published": true,
+    "display_order": 70
+  },
+  {
+    "source_key": "original-071",
+    "legacy_id": 68,
+    "name": "STRIPING BEAT ESP TURBO",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/beat-esp1.webp",
+      "images/beat-esp2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/k0uRdX",
+    "is_published": true,
+    "display_order": 71
+  },
+  {
+    "source_key": "original-072",
+    "legacy_id": 69,
+    "name": "STRIPING VARIO GEN2 STYLE KT",
+    "description": "PNP BASE KOCIN",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/gen-2-1.webp",
+      "images/gen-2-2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/HDgJEgOq",
+    "is_published": true,
+    "display_order": 72
+  },
+  {
+    "source_key": "original-073",
+    "legacy_id": 70,
+    "name": "STRIPING VARIO LED NEW VIET STYLE",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/led-new-kuning1.webp",
+      "images/led-new-kuning2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/eNzjCU",
+    "is_published": true,
+    "display_order": 73
+  },
+  {
+    "source_key": "original-074",
+    "legacy_id": 71,
+    "name": "STRIPING GEN 2 BIRU HITAM",
+    "description": "PNP BASE KOCIN",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/v-gen2-1.webp",
+      "images/v-gen2-2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/dRASq",
+    "is_published": true,
+    "display_order": 74
+  },
+  {
+    "source_key": "original-075",
+    "legacy_id": 72,
+    "name": "STRIPING VARIO LED NEW API",
+    "description": "PNP BASE BRODEE22",
+    "price": 0,
+    "category": "strip",
+    "images": [
+      "images/vario-led-new1.webp",
+      "images/vario-led-new2.webp"
+    ],
+    "poly_count": "800",
+    "file_format": "OBJ",
+    "style": "proper",
+    "product_type": "free",
+    "download_url": "https://sfl.gl/fA99kXY",
+    "is_published": true,
+    "display_order": 75
+  }
+]
